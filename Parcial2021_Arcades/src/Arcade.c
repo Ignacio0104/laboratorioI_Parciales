@@ -246,6 +246,7 @@ int arc_modificarArcade(eArcade *arcadeList,int lenghtArcade, int idIngresada)
 		retorno=0;
 		posicionPedida=arc_buscarPorId (arcadeList,lenghtArcade, idIngresada);
 		if(posicionPedida>=0)
+
 		{
 			if(idIngresada==arcadeList[posicionPedida].idArcade)
 			{
