@@ -26,7 +26,7 @@ int menuOperaciones (void)
 {
 	int eleccion;
 
-	printf("\n	|Menu|\n\n"
+	printf("\n <<<|Menu|>>>\n\n"
 			"1)Alta de Salon\n"
 			"2)Eliminar Salon\n"
 			"3)Imprimir Salones\n"
@@ -264,18 +264,18 @@ int info_imprimirArcadePorId (eArcade *arcadeList, int lenghtArcade,eSalon *salo
 		if(posicionBuscada>=0)
 		{
 			salon_cambiarTexto (salonList, posicionBuscada, cadenaAux);
-			printf("Salon %s. Tipo %s\n\n",salonList[posicionBuscada].name,cadenaAux);
+			printf("\n\nSalon %s. Tipo %s\n\n",salonList[posicionBuscada].name,cadenaAux);
 
+			printf("%15s %15s %15s %15s %15s %15s %15s\n\n","ID del Arcade", "Nacionalidad","Sonido","Jugadores","Fichas máximas","ID de Salon", "Juego");
 			for (int i=0;i<lenghtArcade;i++)
 			{
 				if(arcadeList[i].idSalon==idIngresada)
 				{
 					arc_cambiarTexto (arcadeList, i, cadenaAuxDos);
-					printf("ID del Arcade: %d. Nacionalidad: %s. Tipo de Sonido: %s. Cantidad de Jugadores: %d. Capacidad máxima de fichas: %d.  "
-							"ID del Salon: %d Nombre del juego %s\n\n",
+					printf("%15d %15s %15s %15d %15d %15d %15s\n",
 							arcadeList[i].idArcade,
 							arcadeList[i].nationality,
-							cadenaAuxDos,
+							cadenaAux,
 							arcadeList[i].numberOfPlayers,
 							arcadeList[i].maximumTokens,
 							arcadeList[i].idSalon,
