@@ -265,7 +265,7 @@ int arc_modificarArcade(eArcade *arcadeList,int lenghtArcade, int idIngresada)
 										eleccionUsuario=arc_subMenuModificaciones ();
 										break;
 									case 2:
-										arc_imprimirJuegos(arcadeList,lenghtArcade);
+										arc_imprimirJuegosSinRepetir(arcadeList,lenghtArcade);
 										if(pedirTexto(gameAux,sizeof(gameAux), 3, "Ingrese el nuevo nombre del juego: ", "Error")==0)
 										{
 											arc_modificarNombreRepetido (arcadeList,lenghtArcade, gameAux, posicionPedida);
@@ -330,31 +330,6 @@ int arc_imprimirCompleto(eArcade *arcadeList, int lenghtArcade)
 						arcadeList[i].idSalon,
 						arcadeList[i].gameName);
 
-			}
-
-		}
-
-	}
-
-	return retorno;
-
-}
-
-int arc_imprimirJuegos(eArcade *arcadeList, int lenghtArcade)
-{
-	int retorno;
-	retorno=-1;
-
-	if(arcadeList!=NULL&&lenghtArcade>0)
-	{
-		retorno=0;
-		for(int i=0;i<lenghtArcade;i++)
-		{
-
-			if(arcadeList[i].flagEmpty==ACTIVO)
-			{
-
-				printf("- Nombre del juego:		%s\n",arcadeList[i].gameName);
 			}
 
 		}
