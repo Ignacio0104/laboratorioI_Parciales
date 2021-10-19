@@ -79,6 +79,8 @@ int arc_loadArcade(eArcade *pArcade, int idIngresada)
 								pArcade->idArcade=dameUnIdNuevo();
 								pArcade->flagEmpty=ACTIVO;
 								retorno=0;
+
+								printf("\nArcade ingresado con éxito!\n");
 						}
 
 					}
@@ -228,6 +230,7 @@ int arc_remove (eArcade *arcadeList, int lenghtArcade, int idIngresada)
 }
 
 
+
 int arc_modificarArcade(eArcade *arcadeList,int lenghtArcade, int idIngresada)
 {
 	int retorno;
@@ -294,7 +297,7 @@ int arc_modificarArcade(eArcade *arcadeList,int lenghtArcade, int idIngresada)
 					{
 						printf("ID ingresada no coincide con ningún Arcade\n");
 					}
-			}printf("ID ingresada no coincide con ningún Arcade\n");
+			}
 
 
 	}
@@ -302,6 +305,7 @@ int arc_modificarArcade(eArcade *arcadeList,int lenghtArcade, int idIngresada)
 	return retorno;
 
 }
+
 
 int arc_imprimirCompleto(eArcade *arcadeList, int lenghtArcade)
 {
@@ -380,7 +384,7 @@ int arc_validarNombreRepetido (eArcade *arcadeList, int lenghtArcade, char nombr
 		retorno=0;
 		for(int i=0;i<lenghtArcade;i++)
 		{
-			if(strncmp(arcadeList[i].gameName,nombreJuego,sizeof(arcadeList[i].gameName))==0)
+			if(strncmp(arcadeList[i].gameName,nombreJuego,63)==0)
 			{
 				retorno=1;
 				break;
@@ -424,10 +428,15 @@ int arc_modificarNombreRepetido(eArcade *arcadeList, int lenghtArcade, char nomb
 			}
 
 		}
+	}else
+	{
+		strncpy(arcadeList[posicionPedida].gameName,nombreJuego,sizeof(arcadeList[posicionPedida].gameName));
+		printf("Juego modificado exitosamente.\n");
 	}
 
 	return retorno;
 }
+
 
 int arc_ordenarArcades (eArcade *arcadeList, int lenghtArcade, int order)
 {
