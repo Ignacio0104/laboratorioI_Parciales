@@ -337,15 +337,8 @@ int info_imprimirSalonMasArcade (eArcade *arcadeList, int lenghtArcade,eSalon *s
 
 	posicionMaximo=salon_buscarPorId(salonList,lenghtSalon, idSalonMaximo);
 
-	switch(salonList[posicionMaximo].type)
-	{
-		case TIPO_SHOPPING:
-			strncpy(cadenaAux,"Shopping",32);
-			break;
-		case TIPO_LOCAL:
-			strncpy(cadenaAux,"Local",32);
-			break;
-	}
+	salon_cambiarTexto (salonList, posicionMaximo, cadenaAux);
+
 	printf("El salon con mas cantidad de arcades es:\n\n"
 			"Nombre: %s. Direccion: %s. Tipo: %s. ID de Salon: %d. Arcades: %d \n\n",
 			salonList[posicionMaximo].name,
