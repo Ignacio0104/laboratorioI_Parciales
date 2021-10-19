@@ -143,7 +143,7 @@ int salon_askForId (void)
 		retorno=requestedId;
 	} else
 	{
-		retorno=-2;
+		retorno=-1;
 	}
 
 
