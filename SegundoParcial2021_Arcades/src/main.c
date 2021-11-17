@@ -40,8 +40,10 @@ int main()
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 3:
-            	printf("En construcción...\n");
-            	//controller_editEmployee(listaEmpleados);
+            	if(controller_editArcade(listaArcades)==0)
+            	{
+            		controller_saveAsText("dataArcades.csv",listaArcades);
+            	}
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 4:

@@ -32,6 +32,8 @@ int arcade_printArcade(Arcade* this);
 int arcade_askForInformation(char *pNacionalidad, int* pSonido, int* pJugadores,int* pFichas, char* pSalon, char* pJuego);
 int arcade_createNewId (LinkedList* pArrayArcade);
 int arcade_createFirstId (LinkedList* pArrayArcade);
+int arcade_modify(Arcade* this);
+int arcade_findById(LinkedList* pArrayArcade,int id);
 
 
 //// SETTERS Y GETTERS ////

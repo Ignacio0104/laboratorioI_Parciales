@@ -7,6 +7,7 @@
 #include "Arcades.h"
 
 #define NOMBRE_LEN 128
+#define GAME_LEN 63
 #define TIPO_MONO 1
 #define TIPO_ESTEREO 2
 
@@ -144,6 +145,104 @@ int arcade_createNewId (LinkedList* pArrayArcade)
 	return idNueva;
 }
 
+int arcade_modify(Arcade* this)
+{
+	int retorno=-1;
+	char juegoAux[GAME_LEN];
+	int jugadoresAux;
+	char banderaSalir='n';
+
+	int userChoice;
+
+	if(this!=NULL)
+	{
+		printf("Que dato desea modificar?\n"
+					"1)Nombre del juego\n"
+					"2)Cantidad de jugadores\n"
+					"3)Salir\n");
+
+
+			if(pedirIntIntentosRango(&userChoice, 1, 3, 3, "Ingrese aquí su opción: ", "Error")!=0)
+			{
+				userChoice=3;
+			}
+
+			while(banderaSalir!='s')
+			{
+				switch (userChoice)
+				{
+					case 1:
+						if(pedirTexto(juegoAux,GAME_LEN, 1, "Ingrese el nuevo nombre: ", "Error, dato ingresado inválido\n")==0)
+						{
+							if(arcade_setJuego(this,juegoAux)==0)
+							{
+								printf("\n >>> Nombre modificado con éxito <<< \n");
+								retorno=0;
+							} else
+							{
+								printf("\nNo se pudo modificar\n");
+
+							}
+						}else
+						{
+							printf("\nError al ingresar los datos\n");
+						}
+
+						printf("Que dato desea modificar?\n"
+									"1)Nombre del juego\n"
+									"2)Cantidad de jugadores\n"
+									"3)Salir\n");
+
+
+							if(pedirIntIntentosRango(&userChoice, 1, 3, 3, "Ingrese aquí su opción: ", "Error")!=0)
+							{
+								userChoice=3;
+							}
+
+						break;
+					case 2:
+
+						if(pedirIntIntentosRango(&jugadoresAux,0, INT_MAX, 1, "Ingrese la cantidad de jugadores: ", "Error, dato ingresado inválido")==0)
+						{
+							if(arcade_setJugadores(this,jugadoresAux)==0)
+							{
+								printf("\n >>> Cantidad de jugadores modificada con éxito <<< \n");
+								retorno=0;
+							}else
+							{
+								printf("\nNo se pudo modificar\n");
+
+							}
+						}else
+						{
+							printf("\nError al ingresar los datos\n");
+						}
+
+						printf("Que dato desea modificar?\n"
+									"1)Nombre del juego\n"
+									"2)Cantidad de jugadores\n"
+									"3)Salir\n");
+
+
+						if(pedirIntIntentosRango(&userChoice, 1, 3, 3, "Ingrese aquí su opción: ", "Error")!=0)
+						{
+							userChoice=3;
+						}
+
+						break;
+					case 3:
+						printf("Volviendo al menú principal\n");
+						banderaSalir='s';
+						break;
+
+				}
+		}
+	}
+
+
+	return retorno;
+}
+
 int arcade_printArcade(Arcade* this)
 {
 	int retorno;
@@ -178,6 +277,42 @@ int arcade_printArcade(Arcade* this)
 		printf("Arcade ID: %d - Nacionalidad: %s - Sonido: %s - Jugadores: %d - Fichas: %d - Salon: %s - Juego: %s\n"
 				,idAux,nacionalidadAux,tipoSonidoTxtAux,jugadoresAux,fichasAux,salonAux,juegoAux);
 		retorno=0;
+	}
+
+	return retorno;
+}
+
+int arcade_findById(LinkedList* pArrayArcade,int id)
+{
+	int retorno;
+	Arcade* pElemento;
+	int idLista;
+	int longitud;
+
+	retorno=-1;
+
+	if(pArrayArcade!=NULL&&id>=0)
+	{
+		longitud=ll_len(pArrayArcade);
+		for(int i=0;i<longitud;i++)
+		{
+			if(ll_get(pArrayArcade, i)!=NULL)
+			{
+				pElemento=ll_get(pArrayArcade, i);
+
+				if(arcade_getId(pElemento,&idLista)==0)
+				{
+					if(idLista==id)
+					{
+						retorno=i;
+						break;
+					}
+				}
+
+			}
+
+		}
+
 	}
 
 	return retorno;

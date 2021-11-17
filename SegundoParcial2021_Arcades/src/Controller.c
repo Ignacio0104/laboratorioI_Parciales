@@ -204,3 +204,49 @@ int controller_ListArcades(LinkedList* pArrayListArcades)
 	}
 	return retorno;
 }
+
+int controller_editArcade(LinkedList* pArrayListArcades)
+{
+	int retorno=-1;
+	int idPedida;
+	int posicionPedida;
+	int lenght;
+	Arcade * pArcadeAux;
+
+	lenght=ll_len(pArrayListArcades);
+
+	if(lenght>0)
+	{
+		controller_ListArcades(pArrayListArcades);
+
+		if(pedirInt(&idPedida, 1, "\n\nIngrese el ID que del arcade que desea modificar: ", "Error, dato ingresado inválido\n")==0)
+		{
+			posicionPedida=arcade_findById(pArrayListArcades,idPedida);
+
+			if(posicionPedida>=0)
+			{
+				pArcadeAux=ll_get(pArrayListArcades, posicionPedida);
+
+				if(pArcadeAux!=NULL)
+				{
+					if(arcade_modify(pArcadeAux)==0)
+					{
+						retorno=0;
+					}
+				}
+			} else
+			{
+				printf("No se encontró el arcade solicitado\n\n");
+			}
+		}
+
+
+	} else
+	{
+		printf("\nNo hay ningún arcade cargado para editar\n");
+	}
+
+
+
+    return retorno;
+}
