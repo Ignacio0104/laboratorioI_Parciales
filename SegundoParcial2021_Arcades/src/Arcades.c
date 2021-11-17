@@ -634,7 +634,6 @@ int arcade_setSalon(Arcade* this,char* salon)
 
 		if(esTexto(salon)==0)
 		{
-
 			strncpy(this->salonName,salon,NOMBRE_LEN);
 			retorno=0;
 		}
@@ -667,7 +666,7 @@ int arcade_setJuego(Arcade* this,char* juego)
 		retorno=-2;
 		if(esTexto(juego)==0)
 		{
-			strncpy(this->gameName,juego,NOMBRE_LEN);
+			strncpy(this->gameName,juego,GAME_LEN);
 			retorno=0;
 		}
 	}
@@ -683,7 +682,7 @@ int arcade_getJuego(Arcade* this,char* juego)
 		retorno=-2;
 		if(esTexto(this->gameName)==0)
 		{
-			strncpy(juego,this->gameName,NOMBRE_LEN);
+			strncpy(juego,this->gameName,GAME_LEN);
 			retorno=0;
 		}
 	}

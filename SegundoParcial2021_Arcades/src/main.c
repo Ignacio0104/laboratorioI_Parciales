@@ -21,6 +21,7 @@ int main()
     int eleccionUsuario;
     char banderaCierre='n';
     LinkedList* listaArcades = ll_newLinkedList();
+    LinkedList* listaJuegos = ll_newLinkedList();
 
    eleccionUsuario=controller_MainMenu();
 
