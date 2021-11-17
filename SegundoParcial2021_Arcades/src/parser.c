@@ -46,7 +46,7 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayArcades)
 					}
 					else
 					{
-						employee_delete(pArcadeAux);
+						//employee_delete(pArcadeAux);
 						retorno=-1;
 						break;
 					}

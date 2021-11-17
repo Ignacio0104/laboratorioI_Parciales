@@ -25,13 +25,23 @@ Arcade* Arcade_newParametros(char* idStr,char* nacionalidadStr,char* sonidoStr,c
 	{
 		if(idStr!=NULL&&nacionalidadStr!=NULL&&sonidoStr!=NULL&&jugadoresStr!=NULL&&fichasStr!=NULL&&salonStr!=NULL&&juegoStr!=NULL)
 		{
-			if(Arcade_setIdTxt(pArcade,idStr)==0)
+			if(arcade_setIdTxt(pArcade,idStr)==0)
 			{
-				if(Arcade_setNombre(pArcade,nombreStr)==0)
+				if(arcade_setNacionalidad(pArcade,nacionalidadStr)==0)
 				{
-					if(Arcade_setHorasTrabajadasTxt(pArcade,horasTrabajadasStr)==0)
+					if(arcade_setSonidoTxt(pArcade,sonidoStr)==0)
 					{
-						Arcade_setSueldoTxt(pArcade,sueldoStr);
+						if(arcade_setJugadoresTxt(pArcade,jugadoresStr)==0)
+						{
+							if(arcade_setFichasTxt(pArcade,fichasStr)==0)
+							{
+								if(arcade_setSalon(pArcade,salonStr)==0)
+								{
+									arcade_setJuego(pArcade,juegoStr);
+								}
+							}
+						}
+
 
 					}
 				}
@@ -161,7 +171,6 @@ int arcade_getNacionalidad(Arcade* this,char* nacionalidad)
 int arcade_setSonidoTxt(Arcade* this,char* sonido)
 {
 	int retorno=-1;
-	int sonidoAux;
 	if(this!=NULL&&sonido!=NULL)
 	{
 		retorno=-2;

@@ -27,6 +27,7 @@ typedef struct {
 }Arcade;
 
 Arcade* arcade_new();
+Arcade* Arcade_newParametros(char* idStr,char* nacionalidadStr,char* sonidoStr,char* jugadoresStr,char*fichasStr,char*salonStr,char*juegoStr);
 
 //// SETTERS Y GETTERS ////
 int arcade_setIdTxt(Arcade* this,char* id);
