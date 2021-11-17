@@ -34,6 +34,7 @@ int arcade_createNewId (LinkedList* pArrayArcade);
 int arcade_createFirstId (LinkedList* pArrayArcade);
 int arcade_modify(Arcade* this);
 int arcade_findById(LinkedList* pArrayArcade,int id);
+int arcade_compareGame(void* arcadeUno,void* arcadeDos);
 
 
 //// SETTERS Y GETTERS ////

@@ -7,6 +7,7 @@
 
 #include "Controller.h"
 #include "parser.h"
+
 #define NOMBRE_LEN 128
 
 int controller_MainMenu (void)
@@ -116,6 +117,52 @@ int controller_addArcade(LinkedList* pArrayListArcades)
     return retorno;
 }
 
+int controller_addJuego(LinkedList* pArrayListArcades)
+{
+	int retorno=-1;
+	int lenght;
+	char nombreJuegoAux[63];
+	int criterio;
+	Arcade* pArcadeUno;
+	Arcade* pArcadeDos;
+
+	if(pArrayListArcades!=NULL)
+	{
+		retorno=0;
+		lenght=ll_len(pArrayListArcades);
+		controller_sortArcade(pArrayListArcades);
+		FILE* f = fopen("juegos.txt","w");
+		if(f!=NULL)
+		{
+			retorno=0;
+
+			for(int i=0;i<=lenght;i++)
+			{
+				pArcadeUno=ll_get(pArrayListArcades,i);
+				pArcadeDos=ll_get(pArrayListArcades,i+1);
+
+				if(pArcadeUno!=NULL&&pArcadeDos!=NULL)
+				{
+					criterio=arcade_compareGame(pArcadeUno,pArcadeDos);
+
+						if(criterio==1||criterio==-1)
+						{
+							arcade_getJuego(pArcadeUno,nombreJuegoAux);
+							fprintf(f,"%s\n",nombreJuegoAux);
+						}
+
+				}
+
+
+			}
+
+			fclose(f);
+		}
+	}
+
+    return retorno;
+}
+
 int controller_saveAsText(char* path , LinkedList* pArrayListArcades)
 {
 	Arcade* pArcadeAux;
@@ -205,6 +252,7 @@ int controller_ListArcades(LinkedList* pArrayListArcades)
 	return retorno;
 }
 
+
 int controller_editArcade(LinkedList* pArrayListArcades)
 {
 	int retorno=-1;
@@ -247,6 +295,30 @@ int controller_editArcade(LinkedList* pArrayListArcades)
 	}
 
 
+
+    return retorno;
+}
+
+int controller_sortArcade(LinkedList* pArrayListArcades)
+{
+    int retorno=-1;
+	int lenght;
+
+	if (pArrayListArcades!=NULL)
+	{
+		lenght=ll_len(pArrayListArcades);
+		if(lenght>0)
+		{
+			if(ll_sort(pArrayListArcades,arcade_compareGame,0)==0)
+			{
+				retorno=0;
+			}
+		}else
+		{
+			printf("\nNo hay juegos cargados para ordenar\n");
+		}
+
+	}
 
     return retorno;
 }

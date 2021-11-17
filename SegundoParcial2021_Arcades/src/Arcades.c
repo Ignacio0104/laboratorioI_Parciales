@@ -243,6 +243,7 @@ int arcade_modify(Arcade* this)
 	return retorno;
 }
 
+
 int arcade_printArcade(Arcade* this)
 {
 	int retorno;
@@ -316,6 +317,38 @@ int arcade_findById(LinkedList* pArrayArcade,int id)
 	}
 
 	return retorno;
+}
+
+int arcade_compareGame(void* arcadeUno,void* arcadeDos)
+{
+    int retorno;
+
+    char nombreAuxUno[GAME_LEN];
+    char nombreAuxDos[GAME_LEN];
+
+    if(arcadeUno!=NULL&&arcadeDos!=NULL)
+	{
+		arcade_getJuego((Arcade*)arcadeUno,nombreAuxUno);
+		arcade_getJuego((Arcade*)arcadeDos,nombreAuxDos);
+
+		int comparacion = strcmp(nombreAuxUno,nombreAuxDos);
+		if (comparacion<0)
+		{
+			retorno=1;
+		}
+		else
+		{
+			if (comparacion>0)
+			{
+				retorno=-1;
+			} else
+			{
+				retorno=0;
+			}
+		}
+	}
+
+    return retorno;
 }
 
 

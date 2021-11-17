@@ -47,8 +47,19 @@ int main()
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 4:
-            	printf("En construcción...\n");
-            	//controller_removeEmployee(listaEmpleados);
+            	/*controller_addJuego(listaArcades, listaJuegos);
+            	for(int i=0;i<ll_len(listaJuegos);i++)
+            	{
+            		char nombreAux[63];
+            		Juego* juegoAux;
+
+            		juegoAux=ll_get(listaJuegos,i);
+            		juego_getNombreJuego(juegoAux,nombreAux);
+
+            		printf("JUEGO >>> %s",nombreAux);
+
+            	}
+            	//controller_removeEmployee(listaEmpleados);*/
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 5:
@@ -56,8 +67,7 @@ int main()
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 6:
-            	printf("En construcción...\n");
-            	//controller_saveAsText("data.csv", listaEmpleados);
+            	controller_addJuego(listaArcades);
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 7:

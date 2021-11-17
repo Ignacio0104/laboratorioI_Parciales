@@ -18,8 +18,11 @@ int controller_MainMenu (void);
 int controller_ListArcades(LinkedList* pArrayListArcades);
 int controller_loadFromText(char* path , LinkedList* pArrayListArcades);
 int controller_addArcade(LinkedList* pArrayListArcades);
+int controller_addJuego(LinkedList* pArrayListArcades);
 int controller_saveAsText(char* path , LinkedList* pArrayListArcades);
 int controller_editArcade(LinkedList* pArrayListArcades);
+int controller_sortArcade(LinkedList* pArrayListArcades);
+
 
 
 #endif /* CONTROLLER_H_ */
