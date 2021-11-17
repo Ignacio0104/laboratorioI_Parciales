@@ -29,13 +29,11 @@ int main()
         switch(eleccionUsuario)
         {
             case 1:
-            	printf("En construcción...\n");
-            	//controller_loadFromText("data.csv",listaEmpleados);
+            	controller_loadFromText("dataArcades.csv",listaArcades);
                 eleccionUsuario=controller_MainMenu();
                 break;
             case 2:
-            	printf("En construcción...\n");
-            	//controller_addEmployee(listaEmpleados);
+            	controller_addArcade(listaArcades);
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 3:
@@ -49,8 +47,7 @@ int main()
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 5:
-            	printf("En construcción...\n");
-            	//controller_ListEmployee(listaEmpleados);
+            	controller_ListArcades(listaArcades);
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 6:

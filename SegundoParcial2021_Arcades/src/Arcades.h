@@ -8,6 +8,7 @@
 #ifndef ARCADES_H_
 #define ARCADES_H_
 #include "Validaciones.h"
+#include "LinkedList.h"
 #include <string.h>
 #include <limits.h>
 #include <stdio.h>
@@ -22,12 +23,16 @@ typedef struct {
 	char gameName[63];
 	char salonName[128];
 	int idArcade;
-	int flagEmpty;
 
 }Arcade;
 
 Arcade* arcade_new();
-Arcade* Arcade_newParametros(char* idStr,char* nacionalidadStr,char* sonidoStr,char* jugadoresStr,char*fichasStr,char*salonStr,char*juegoStr);
+Arcade* arcade_newParametros(char* idStr,char* nacionalidadStr,char* sonidoStr,char* jugadoresStr,char*fichasStr,char*salonStr,char*juegoStr);
+int arcade_printArcade(Arcade* this);
+int arcade_askForInformation(char *pNacionalidad, int* pSonido, int* pJugadores,int* pFichas, char* pSalon, char* pJuego);
+int arcade_createNewId (LinkedList* pArrayArcade);
+int arcade_createFirstId (LinkedList* pArrayArcade);
+
 
 //// SETTERS Y GETTERS ////
 int arcade_setIdTxt(Arcade* this,char* id);
@@ -38,7 +43,8 @@ int arcade_setNacionalidad(Arcade* this,char* nacionalidad);
 int arcade_getNacionalidad(Arcade* this,char* nacionalidad);
 int arcade_setSonidoTxt(Arcade* this,char* sonido);
 int arcade_setSonido(Arcade* this,int sonido);
-int arcade_getSonido(Arcade* this,char* sonido);
+int arcade_getSonidoTxt(Arcade* this,char* sonido);
+int arcade_getSonido(Arcade* this,int* sonido);
 int arcade_setJugadoresTxt(Arcade* this,char* jugadores);
 int arcade_setJugadores(Arcade* this,int jugadores);
 int arcade_getJugadores(Arcade* this,int* jugadores);

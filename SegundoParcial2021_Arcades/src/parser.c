@@ -14,7 +14,7 @@
  * \return int
  *
  */
-int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayArcades)
+int parser_ArcadeFromText(FILE* pFile , LinkedList* pArrayArcades)
 {
 	int retorno=-1;
 	Arcade* pArcadeAux;
@@ -72,52 +72,3 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayArcades)
 }
 
 
-
-/*
-/** \brief Parsea los datos los datos de los empleados desde el archivo data.csv (modo binario).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
-
-int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
-{
-	int retorno=-1;
-	int contadorErrores;
-
-
-	Employee*pEmpleadoAux;
-	contadorErrores=0;
-
-	if(pFile!=NULL&&pArrayListEmployee!=NULL)
-
-	{
-		 do
-		{
-			 pEmpleadoAux = employee_new();
-			 if(pEmpleadoAux!=NULL)
-			 {
-				 if(fread(pEmpleadoAux,sizeof(Employee),1,pFile)==1)
-					{
-						ll_add(pArrayListEmployee,pEmpleadoAux);
-						retorno=0;
-					} else
-					{
-						employee_delete(pEmpleadoAux);
-						contadorErrores++;
-						break;
-					}
-			 }
-
-		}while( feof(pFile)==0 );
-
-	}
-
-	if(contadorErrores>1)
-	{
-		printf("Se detectó uno o más errores al importar el archivo. Favor imprimir lista (opción 6) y verificar que esté correcta\n");
-	}
-
-    return retorno;;
-}*/

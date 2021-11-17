@@ -13,7 +13,7 @@
 #include "Arcades.h"
 
 
-int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee);
+int parser_ArcadeFromText(FILE* pFile , LinkedList* pArrayArcades);
 //int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee);
 
 
