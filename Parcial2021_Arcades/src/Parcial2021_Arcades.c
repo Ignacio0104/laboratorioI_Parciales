@@ -41,8 +41,8 @@ int main(void) {
 	arc_initList(arcadeList,ARCADE_LEN);
 
 
-	//Hardcodeo
-	/*salon_altaForzada(salonList,"Sacoa","Maipu 225", 1, 10, 0);
+	//Hardcode
+	salon_altaForzada(salonList,"Sacoa","Maipu 225", 1, 10, 0);
 	salon_altaForzada(salonList,"Showcase","Peatonal 14", 2, 11, 1);
 	salon_altaForzada(salonList,"Juguelandia","Paseo 15", 1, 12, 2);
 	salon_altaForzada(salonList,"Travalcase","Guemes 678", 1, 13, 3);
@@ -51,19 +51,20 @@ int main(void) {
 
 	arc_altaForzada(arcadeList,"USA", 1, 4, 2000, 11,"WonderBoy",1000, 0);
 	arc_altaForzada(arcadeList,"Tokyo", 2, 5, 3000, 11,"Sonic",1001, 1);
-	arc_altaForzada(arcadeList,"Alemania", 2, 6, 1500, 11,"Pacman",1002, 2);
-	arc_altaForzada(arcadeList,"Holanda", 1, 5, 2600, 11,"Daytona",1006, 6);
-	arc_altaForzada(arcadeList,"Argentina", 2, 3, 2100, 11,"Pacman",1004, 4);
+	arc_altaForzada(arcadeList,"Alemania", 4, 1, 1500, 11,"Pacman",1002, 2);
+	arc_altaForzada(arcadeList,"Holanda", 1, 1, 2600, 11,"Daytona",1006, 6);
+	arc_altaForzada(arcadeList,"Argentina", 1, 3, 2100, 11,"Pacman",1004 , 4);
 	arc_altaForzada(arcadeList,"USA", 2, 6, 100, 11,"Street Fighter",1007, 7);
-	arc_altaForzada(arcadeList,"Rusia", 2, 1, 1000, 13,"Metal Slug",1005, 5);
-	arc_altaForzada(arcadeList,"Rusia", 2, 2, 1000, 13,"Megaman",1012, 12);
-	arc_altaForzada(arcadeList,"Portugal", 2, 2, 3000, 14,"Booger Man",1008, 8);
+	arc_altaForzada(arcadeList,"Rusia", 2, 4, 1000, 11,"Metal Slug",1005, 5);
+	arc_altaForzada(arcadeList,"Rusia", 2, 3, 1000, 11,"Megaman",1012, 12);
+	arc_altaForzada(arcadeList,"Portugal", 2, 3, 3000, 11,"Booger Man",1008, 8);
 	arc_altaForzada(arcadeList,"Finlandia", 2, 2, 1500, 14,"Pacman",1009, 9);
 	arc_altaForzada(arcadeList,"USA", 1, 3, 3500, 14,"Prince of Persia",1010, 10);
-	arc_altaForzada(arcadeList,"Alemania", 1, 6, 2600, 14,"Daytona",1013, 13);
 	arc_altaForzada(arcadeList,"USA", 1, 3, 3500, 13,"Pacman",1003, 3);
-	arc_altaForzada(arcadeList,"China", 2, 4, 2100, 13,"Capcom",1011,11);*/
-
+	arc_altaForzada(arcadeList,"China", 2, 4, 2100, 13,"Capcom",1012,20);
+	arc_altaForzada(arcadeList,"China", 2, 4, 2100, 13,"Capcom",1013,21);
+	arc_altaForzada(arcadeList,"China", 2, 4, 2100, 13,"Capcom",1014,23);
+	arc_altaForzada(arcadeList,"China", 2, 4, 2100, 13,"Capcom",1015,25);
 
 	eleccionUsuario=menuOperaciones();
 

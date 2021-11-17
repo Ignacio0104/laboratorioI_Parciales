@@ -107,4 +107,6 @@ void salon_altaForzada(eSalon *pSalon,char nombre[],char direccion[], int tipo, 
 /// \return Devuelve -1 si hubo error o 0 si no hubo error
 int salon_occupancy (eSalon *salonList, int lenghtSalon, int* pNotEmpty);
 
+
+
 #endif /* SALON_H_ */

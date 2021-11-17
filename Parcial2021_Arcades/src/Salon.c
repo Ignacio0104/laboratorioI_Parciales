@@ -14,6 +14,8 @@
 #define TIPO_LOCAL 2
 
 
+
+
 int salon_cambiarTexto (eSalon *salonList, int posicion, char pTextoConvertido[]);
 
 static int dameUnIdNuevo (void);

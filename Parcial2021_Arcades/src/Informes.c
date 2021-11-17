@@ -55,9 +55,11 @@ char info_subMenuReports (void)
 			"	e)Salon con mayor cantidad de arcades\n"
 			"	f)Monto maximo en pesos por ID de Salon\n"
 			"	g)Cantidad de arcades que tienen un juego (por nombre)\n"
-			"	h)Volver al menu principal");
+			"	h)Cantidad de salones completos\n"
+			"	i)Promedio de arcades por salon\n"
+			"	j)Volver al menu principal");
 
-	pedirCharAUsuarioIntentosRango(&eleccion, 'a', 'h', 5, "\n\nIngrese su elección: ", "Error");
+	pedirCharAUsuarioIntentosRango(&eleccion, 'a', 'j', 5, "\n\nIngrese su elección: ", "Error");
 
 	return eleccion;
 }
@@ -108,7 +110,7 @@ int info_contarArcades (eArcade *arcadeList, int lenghtArcade,eSalon *salonList,
 
 	}
 
-	contadorSalones=0;
+
 	for(int i=0;i<lenghtSalon;i++)
 	{
 		for(int j=0;j<indiceDeId;j++)
@@ -125,13 +127,13 @@ int info_contarArcades (eArcade *arcadeList, int lenghtArcade,eSalon *salonList,
 													salonList[i].address,
 													cadenaAux,
 													salonList[i].idSalon);
-					contadorSalones++;
+
 				}
 			}
 
 		}
 	}
-	if(contadorSalones==0)
+	if(contadorSalones==1)
 	{
 		printf("Ningún salon tiene mas de 4 arcades");
 	}
@@ -221,10 +223,14 @@ int info_imprimirSalonPorId (eArcade *arcadeList, int lenghtArcade,eSalon *salon
 		{
 			for (int i=0;i<lenghtArcade;i++)
 			{
-				if(arcadeList[i].idSalon==idIngresada)
+				if(arcadeList[i].flagEmpty==ACTIVO)
 				{
-					contadorArcades++;
+					if(arcadeList[i].idSalon==idIngresada)
+						{
+							contadorArcades++;
+						}
 				}
+
 			}
 		} else
 		{
@@ -543,6 +549,13 @@ int info_imprimirInformes (eArcade *arcadeList, int lenghtArcade,eSalon *salonLi
 				}
 				break;
 
+			case 'h':
+				info_arcadesCompletos (arcadeList, ARCADE_LEN,salonList,SALON_LEN);
+				break;
+			case 'i':
+				info_promedioDeArcades (arcadeList, ARCADE_LEN,salonList,SALON_LEN);
+				break;
+
 		}
 
 
@@ -553,5 +566,126 @@ int info_imprimirInformes (eArcade *arcadeList, int lenghtArcade,eSalon *salonLi
 
 }
 
+int info_arcadesCompletos (eArcade *arcadeList, int lenghtArcade,eSalon *salonList,int lenghtSalon)
+{
+	int retorno;
+	retorno=-1;
+	int contadorSalonesCompletos;
+	int listaDeId[1000];
+	int indiceDeId;
+	char cadenaAux[32];
 
+	arc_ordenarArcades (arcadeList, lenghtArcade,2);
+	contadorSalonesCompletos=0;
+	indiceDeId=0;
+
+	if(arcadeList!=NULL&&lenghtArcade>0)
+	{
+		retorno=0;
+		for(int i=0;i<lenghtArcade;i++)
+		{
+			if(arcadeList[i].flagEmpty==ACTIVO)
+			{
+				if(arcadeList[i].idSalon == arcadeList[i+1].idSalon)
+				{
+					if(arcadeList[i].numberOfPlayers>2)
+					{
+						contadorSalonesCompletos++;
+						if(contadorSalonesCompletos==7)
+						{
+
+							listaDeId[indiceDeId]=arcadeList[i].idSalon;
+							indiceDeId++;
+
+							if(contadorSalonesCompletos>7)
+							{
+								continue;
+							}
+						}
+
+					}
+				}
+				else
+				{
+					contadorSalonesCompletos=0;
+				}
+
+			}
+
+		}
+
+	}
+
+	for(int i=0;i<lenghtSalon;i++)
+	{
+		for(int j=0;j<indiceDeId;j++)
+		{
+			if(salonList[i].flagEmpty==ACTIVO)
+			{
+				if(salonList[i].idSalon==listaDeId[j])
+				{
+
+					salon_cambiarTexto (salonList, i, cadenaAux);
+
+					printf("Nombre: %s. Direccion: %s. Tipo: %s. ID de Salon: %d.  \n\n",
+													salonList[i].name,
+													salonList[i].address,
+													cadenaAux,
+													salonList[i].idSalon);
+
+				}
+			}
+
+		}
+	}
+	if(indiceDeId==0)
+	{
+		printf("No hay ningún salon completo");
+	}
+
+	return retorno;
+}
+
+float info_promedioDeArcades (eArcade *arcadeList, int lenghtArcade,eSalon *salonList,int lenghtSalon)
+{
+	float retorno;
+	retorno=-1;
+	int contadorSalonesTotal;
+	int contadorArcadesTotal;
+
+	contadorArcadesTotal=0;
+	contadorSalonesTotal=0;
+
+	if(arcadeList!=NULL&&lenghtArcade>0)
+	{
+		retorno=0;
+		for(int i=0;i<lenghtArcade;i++)
+		{
+			if(arcadeList[i].flagEmpty==ACTIVO)
+			{
+				contadorArcadesTotal++;
+			}
+		}
+
+
+		for(int i=0;i<lenghtSalon;i++)
+		{
+			if(salonList[i].flagEmpty==ACTIVO)
+			{
+				contadorSalonesTotal++;
+			}
+		}
+	}
+
+	if(contadorSalonesTotal>0&&contadorArcadesTotal>0)
+	{
+		retorno=(float)contadorArcadesTotal/contadorSalonesTotal;
+		printf("El promedio de arcades por salon es de %.2f",retorno);
+	}
+
+
+	return retorno;
+
+
+}
 

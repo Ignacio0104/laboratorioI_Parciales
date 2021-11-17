@@ -144,5 +144,7 @@ int info_juegoEnArcades (eArcade *arcadeList, int lenghtArcade, char nombreJuego
 /// \return Devuelve 0 si no hubo error o -2 si hubo error
 int info_imprimirInformes (eArcade *arcadeList, int lenghtArcade,eSalon *salonList,int lenghtSalon, char eleccionUsuario);
 
+int info_arcadesCompletos (eArcade *arcadeList, int lenghtArcade,eSalon *salonList,int lenghtSalon);
 
+float info_promedioDeArcades (eArcade *arcadeList, int lenghtArcade,eSalon *salonList,int lenghtSalon);
 #endif /* INFORMES_H_ */

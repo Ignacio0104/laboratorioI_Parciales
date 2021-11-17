@@ -272,6 +272,7 @@ int arc_modificarArcade(eArcade *arcadeList,int lenghtArcade, int idIngresada)
 										arc_imprimirJuegosSinRepetir(arcadeList,lenghtArcade);
 										if(pedirTexto(gameAux,sizeof(gameAux), 3, "Ingrese el nuevo nombre del juego: ", "Error")==0)
 										{
+											posicionPedida=arc_buscarPorId (arcadeList,lenghtArcade, idIngresada);
 											arc_modificarNombreRepetido (arcadeList,lenghtArcade, gameAux, posicionPedida);
 
 										} else
@@ -320,11 +321,9 @@ int arc_imprimirCompleto(eArcade *arcadeList, int lenghtArcade)
 		retorno=0;
 		for(int i=0;i<lenghtArcade;i++)
 		{
-
 			if(arcadeList[i].flagEmpty==ACTIVO)
 			{
 				arc_cambiarTexto (arcadeList, i, cadenaAux);
-
 
 				printf("%15d %15s %15s %15d %15d %15d %25s\n",
 						arcadeList[i].idArcade,
@@ -433,6 +432,7 @@ int arc_modificarNombreRepetido(eArcade *arcadeList, int lenghtArcade, char nomb
 	{
 		strncpy(arcadeList[posicionPedida].gameName,nombreJuego,sizeof(arcadeList[posicionPedida].gameName));
 		printf("Juego modificado exitosamente.\n");
+		retorno=0;
 	}
 
 	return retorno;
