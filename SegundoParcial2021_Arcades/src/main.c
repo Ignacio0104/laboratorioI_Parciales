@@ -33,7 +33,10 @@ int main()
                 eleccionUsuario=controller_MainMenu();
                 break;
             case 2:
-            	controller_addArcade(listaArcades);
+            	if(controller_addArcade(listaArcades)==0)
+            	{
+            		controller_saveAsText("dataArcades.csv",listaArcades);
+            	}
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 3:

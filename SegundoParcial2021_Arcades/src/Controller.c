@@ -116,6 +116,60 @@ int controller_addArcade(LinkedList* pArrayListArcades)
     return retorno;
 }
 
+int controller_saveAsText(char* path , LinkedList* pArrayListArcades)
+{
+	Arcade* pArcadeAux;
+	int idAux;
+	char nacionalidadAux[NOMBRE_LEN];
+	int sonidoAux;
+	char tipoSonidoTxtAux[NOMBRE_LEN];
+	int jugadoresAux;
+	int fichasAux;
+	char salonAux[NOMBRE_LEN];
+	char juegoAux[NOMBRE_LEN];
+
+	int retorno=-1;
+
+	FILE* f = fopen(path,"w");
+
+	if(f!=NULL)
+	{
+		retorno=0;
+		fprintf(f,"ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego\n");
+		for(int i=0; i<ll_len(pArrayListArcades); i++)
+		{
+			pArcadeAux = ll_get(pArrayListArcades,i);
+			if(pArcadeAux!=NULL)
+			{
+				arcade_getId(pArcadeAux,&idAux);
+				arcade_getNacionalidad(pArcadeAux,nacionalidadAux);
+				arcade_getSonido(pArcadeAux,&sonidoAux);
+				if(sonidoAux==1)
+				{
+					strncpy(tipoSonidoTxtAux,"MONO",NOMBRE_LEN);
+				} else
+				{
+					strncpy(tipoSonidoTxtAux,"ESTEREO",NOMBRE_LEN);
+				}
+				arcade_getJugadores(pArcadeAux,&jugadoresAux);
+				arcade_getFichas(pArcadeAux,&fichasAux);
+				arcade_getSalon(pArcadeAux,salonAux);
+				arcade_getJuego(pArcadeAux,juegoAux);
+
+
+				fprintf(f,"%d,%s,%s,%d,%d,%s,%s\n",idAux,nacionalidadAux,tipoSonidoTxtAux,jugadoresAux,fichasAux,salonAux,juegoAux);
+			}
+
+		}
+		fclose(f);
+	}
+
+
+
+    return retorno;
+}
+
+
 int controller_ListArcades(LinkedList* pArrayListArcades)
 {
 	int retorno=-1;
