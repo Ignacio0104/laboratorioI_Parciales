@@ -68,7 +68,8 @@ int main()
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 6:
-            	controller_addJuego(listaArcades);
+            	controller_addJuego(listaArcades,listaJuegos);
+            	controller_ListJuego(listaJuegos);
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 7:

@@ -172,6 +172,7 @@ int arcade_modify(Arcade* this)
 				switch (userChoice)
 				{
 					case 1:
+
 						if(pedirTexto(juegoAux,GAME_LEN, 1, "Ingrese el nuevo nombre: ", "Error, dato ingresado inválido\n")==0)
 						{
 							if(arcade_setJuego(this,juegoAux)==0)
@@ -282,6 +283,8 @@ int arcade_printArcade(Arcade* this)
 
 	return retorno;
 }
+
+
 
 int arcade_findById(LinkedList* pArrayArcade,int id)
 {

@@ -8,6 +8,7 @@
 #include "Controller.h"
 #include "parser.h"
 
+
 #define NOMBRE_LEN 128
 
 int controller_MainMenu (void)
@@ -117,7 +118,7 @@ int controller_addArcade(LinkedList* pArrayListArcades)
     return retorno;
 }
 
-int controller_addJuego(LinkedList* pArrayListArcades)
+int controller_addJuego(LinkedList* pArrayListArcades,LinkedList* pArrayJuegos)
 {
 	int retorno=-1;
 	int lenght;
@@ -125,6 +126,7 @@ int controller_addJuego(LinkedList* pArrayListArcades)
 	int criterio;
 	Arcade* pArcadeUno;
 	Arcade* pArcadeDos;
+	Juego* pJuegoAux;
 
 	if(pArrayListArcades!=NULL)
 	{
@@ -148,11 +150,16 @@ int controller_addJuego(LinkedList* pArrayListArcades)
 						if(criterio==1||criterio==-1)
 						{
 							arcade_getJuego(pArcadeUno,nombreJuegoAux);
-							fprintf(f,"%s\n",nombreJuegoAux);
+							pJuegoAux=juego_newParametros(nombreJuegoAux);
+							if(nombreJuegoAux!=NULL)
+							{
+								fprintf(f,"%s\n",nombreJuegoAux);
+								ll_add(pArrayJuegos,pJuegoAux);
+							}
+
 						}
 
 				}
-
 
 			}
 
@@ -162,6 +169,43 @@ int controller_addJuego(LinkedList* pArrayListArcades)
 
     return retorno;
 }
+
+int controller_ListJuego(LinkedList* pArrayJuegos)
+{
+	int retorno=-1;
+	int i;
+	int length;
+	Juego * pJuegoAux;
+
+	if (pArrayJuegos!=NULL)
+	{
+		retorno=0;
+		length=ll_len(pArrayJuegos);
+		if(length>0)
+		{
+			for (i=0;length>i;i++)
+			{
+				pJuegoAux=ll_get(pArrayJuegos, i);
+				if(pJuegoAux!=NULL)
+				{
+					juego_printJuego(pJuegoAux);
+				}
+
+			}
+		} else
+		{
+			printf("\nNo hay ningún empleado cargado para mostrar\n");
+		}
+
+	}
+	else
+	{
+		printf("\nNo se encontró la lista\n");
+	}
+	return retorno;
+}
+
+
 
 int controller_saveAsText(char* path , LinkedList* pArrayListArcades)
 {
@@ -251,6 +295,7 @@ int controller_ListArcades(LinkedList* pArrayListArcades)
 	}
 	return retorno;
 }
+
 
 
 int controller_editArcade(LinkedList* pArrayListArcades)
