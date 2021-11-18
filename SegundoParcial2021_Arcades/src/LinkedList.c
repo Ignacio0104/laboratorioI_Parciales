@@ -519,9 +519,9 @@ LinkedList* ll_clone(LinkedList* this)
     	{
     		elementoAux=ll_get(this,i);
     		ll_add(cloneArray,elementoAux);
+
     	}
     }
-
 
     return cloneArray;
 }
@@ -618,7 +618,7 @@ int ll_filter (LinkedList* this,int (*pFunc)(void*))
 
 	if(this!=NULL && pFunc!=NULL)
 	{
-		for(int i=0;i<ll_len(this);i++)
+		for(int i=0;i<=ll_len(this);i++)
 		{
 			pAuxiliar=ll_get(this,i);
 

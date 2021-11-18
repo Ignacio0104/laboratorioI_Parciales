@@ -367,6 +367,29 @@ int arcade_mostrarJuegos(LinkedList* pArrayArcade)
 	return retorno;
 }
 
+int arcade_filtroMultijugador(void* pArcade)
+{
+    int retorno=-2;
+
+    int jugadoresAux;
+
+    if(pArcade!=NULL)
+	{
+		arcade_getJugadores((Arcade*)pArcade,&jugadoresAux);
+
+
+		if (jugadoresAux>1)
+		{
+			retorno=0;
+		} else
+		{
+			retorno=-1;
+		}
+	}
+
+    return retorno;
+}
+
 void arcade_delete(Arcade* this)
 {
 	if(this!=NULL)
@@ -376,6 +399,8 @@ void arcade_delete(Arcade* this)
 	}
 
 }
+
+
 
 int arcade_compareGame(void* arcadeUno,void* arcadeDos)
 {

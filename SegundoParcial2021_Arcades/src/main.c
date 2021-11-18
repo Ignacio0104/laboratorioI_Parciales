@@ -22,6 +22,7 @@ int main()
     char banderaCierre='n';
     LinkedList* listaArcades = ll_newLinkedList();
     LinkedList* listaJuegos = ll_newLinkedList();
+    LinkedList* listaArcadesMultijugador;
 
    eleccionUsuario=controller_MainMenu();
 
@@ -61,8 +62,13 @@ int main()
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 7:
-            	printf("En construcción...\n");
-            	//controller_saveAsText("data.csv", listaEmpleados);
+            	listaArcadesMultijugador=ll_subList(listaArcades,0,ll_len(listaArcades));
+            	if(listaArcadesMultijugador!=NULL)
+            	{
+            		ll_filter(listaArcadesMultijugador,arcade_filtroMultijugador);
+            		printf("Filtrado\n\n");
+            	}
+            	controller_ListArcades(listaArcadesMultijugador);
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 8:
