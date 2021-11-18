@@ -25,6 +25,7 @@ int controller_ListJuego(LinkedList* pArrayJuegos);
 int controller_saveAsText(char* path , LinkedList* pArrayListArcades);
 int controller_editArcade(LinkedList* pArrayListArcades);
 int controller_sortArcade(LinkedList* pArrayListArcades);
+int controller_removeArcade(LinkedList* pArrayListArcades);
 
 
 

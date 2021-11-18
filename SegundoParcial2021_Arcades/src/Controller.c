@@ -10,6 +10,7 @@
 
 
 #define NOMBRE_LEN 128
+#define GAME_LEN 63
 
 int controller_MainMenu (void)
 {
@@ -322,7 +323,7 @@ int controller_editArcade(LinkedList* pArrayListArcades)
 
 				if(pArcadeAux!=NULL)
 				{
-					if(arcade_modify(pArcadeAux)==0)
+					if(arcade_modify(pArcadeAux,pArrayListArcades)==0)
 					{
 						retorno=0;
 					}
@@ -344,6 +345,74 @@ int controller_editArcade(LinkedList* pArrayListArcades)
     return retorno;
 }
 
+int controller_removeArcade(LinkedList* pArrayListArcades)
+{
+    int retorno=-1;
+
+    Arcade* pArcadeAux;
+    int posicionArcade;
+    int idPedida;
+	char nacionalidadAux[NOMBRE_LEN];
+	char juegoAux[GAME_LEN];
+	char salonAux[NOMBRE_LEN];;
+	char userChoice;
+	int lenght;
+
+	lenght=ll_len(pArrayListArcades);
+
+	if(lenght>0)
+	{
+		controller_ListArcades(pArrayListArcades);
+		if(pedirInt(&idPedida, 1, "Ingrese el ID del arcade que desea borrar: \n", "Error, ID ingresada inválida\n")==0)
+		 {
+			 posicionArcade=arcade_findById(pArrayListArcades,idPedida);
+				if(posicionArcade>=0)
+				{
+					pArcadeAux=ll_get(pArrayListArcades, posicionArcade);
+
+					if(pArcadeAux!=NULL)
+					{
+						arcade_getJuego(pArcadeAux,juegoAux);
+						arcade_getSalon(pArcadeAux,salonAux);
+						arcade_getNacionalidad(pArcadeAux,nacionalidadAux);
+
+						printf("Se va a eliminar al arcade:\n"
+								"ID: %d, Juego: %s, Salon: %s, Nacionalidad: %s",idPedida,juegoAux,salonAux,nacionalidadAux);
+
+						pedirCharSiNo(&userChoice, 's', 'n', 2, "\n\n ---------Presione [s] para confirmar o [n] para volver al menu principal---------\n",
+													"Error, dato ingresado inválido\n");
+						if(userChoice=='s')
+						{
+							ll_remove(pArrayListArcades,posicionArcade);
+							arcade_delete(pArcadeAux);
+							printf("\nArcade borrado del sistema\n");
+							retorno=0;
+						}
+						else
+						{
+							printf("\nNo se borrará el Arcade\n");
+							retorno=0;
+						}
+					}
+
+
+				}
+				else
+				{
+					printf("\nNo se encontró el arcade en la lista\n");
+				}
+
+		 }
+
+
+		} else
+		{
+			printf("\nNo hay ningún arcade cargado para borrar\n");
+		}
+
+
+    return retorno;
+}
 int controller_sortArcade(LinkedList* pArrayListArcades)
 {
     int retorno=-1;

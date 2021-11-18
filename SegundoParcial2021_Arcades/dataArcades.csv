@@ -1,18 +1,11 @@
 ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
-1,ARG,MONO,4,1000,Sacoa,Metal Slug III
-2,US,ESTEREO,1,500,Sacoa,Tomb Raider III
-3,AU,ESTEREO,1,700,Sacoa,Megaman
-4,CH,MONO,3,2000,TravelCase,Rayman
-5,US,MONO,4,1500,Center Game,NBA JAM
-6,US,MONO,6,3000,Fichines,Wonder Boy
-12,ARG,MONO,5,8000,Prueba,Pacman
-13,ARG,MONO,5,1000,Sacoa,PinkMan
-1,ARG,MONO,4,1000,Sacoa,Metal Slug III
-2,US,ESTEREO,1,500,Sacoa,Tomb Raider III
-3,AU,ESTEREO,1,700,Sacoa,Megaman
-4,CH,MONO,3,2000,TravelCase,Rayman
-5,US,MONO,4,1500,Center Game,NBA JAM
-6,US,MONO,6,3000,Fichines,Wonder Boy
-12,ARG,MONO,5,8000,Prueba,Pacman
-13,ARG,MONO,5,1000,Sacoa,PinkMan
-21,RUSIA,MONO,6,700,Pereyra,NBA JAM
+23,ARG,MONO,2,9000,Perez,Avengers
+3,AU,MONO,1,700,Sacoa,Megaman
+1,ARG,ESTEREO,4,1000,Sacoa,Metal Slug III
+6,US,ESTEREO,6,3000,Fichines,Metal Slug III
+5,US,ESTEREO,4,1500,Center Game,NBA JAM
+13,ARG,ESTEREO,5,1000,Sacoa,Pacman
+4,CH,ESTEREO,3,2000,TravelCase,Rayman
+22,RUSIA,ESTEREO,4,900,PRUEBAAAAA,TESTEOOO
+2,US,MONO,1,500,Sacoa,Tomb Raider III
+12,ARG,ESTEREO,5,8000,Prueba,Halo

@@ -145,7 +145,7 @@ int arcade_createNewId (LinkedList* pArrayArcade)
 	return idNueva;
 }
 
-int arcade_modify(Arcade* this)
+int arcade_modify(Arcade* this,LinkedList* pArrayArcade)
 {
 	int retorno=-1;
 	char juegoAux[GAME_LEN];
@@ -172,7 +172,7 @@ int arcade_modify(Arcade* this)
 				switch (userChoice)
 				{
 					case 1:
-
+						arcade_mostrarJuegos(pArrayArcade);
 						if(pedirTexto(juegoAux,GAME_LEN, 1, "Ingrese el nuevo nombre: ", "Error, dato ingresado inválido\n")==0)
 						{
 							if(arcade_setJuego(this,juegoAux)==0)
@@ -322,9 +322,64 @@ int arcade_findById(LinkedList* pArrayArcade,int id)
 	return retorno;
 }
 
+int arcade_mostrarJuegos(LinkedList* pArrayArcade)
+{
+	int retorno=-1;
+	int lenght;
+	Arcade* pArcadeAux;
+	Arcade* pArcadeComparacion;
+	int criterio;
+	char nombreJuegoAux[GAME_LEN];
+
+	if(pArrayArcade!=NULL)
+	{
+		lenght=ll_len(pArrayArcade);
+		ll_sort(pArrayArcade,arcade_compareGame,0);
+
+		if(lenght>0)
+		{
+			printf("\nJuegos ya cargados en el sistema: \n\n");
+			for(int i=0;i<=lenght;i++)
+			{
+				pArcadeAux=ll_get(pArrayArcade,i);
+				pArcadeComparacion=ll_get(pArrayArcade,i+1);
+				if(pArcadeAux!=NULL)
+				{
+					criterio=arcade_compareGame(pArcadeAux,pArcadeComparacion);
+
+					if(criterio==0)
+					{
+						continue;
+
+					}else
+					{
+						arcade_getJuego(pArcadeAux,nombreJuegoAux);
+						printf("-Juego: %s\n",nombreJuegoAux);
+
+					}
+				}
+
+			}
+
+		}
+	}
+
+	return retorno;
+}
+
+void arcade_delete(Arcade* this)
+{
+	if(this!=NULL)
+	{
+		free(this);
+		this=NULL;
+	}
+
+}
+
 int arcade_compareGame(void* arcadeUno,void* arcadeDos)
 {
-    int retorno;
+    int retorno=-2;
 
     char nombreAuxUno[GAME_LEN];
     char nombreAuxDos[GAME_LEN];
