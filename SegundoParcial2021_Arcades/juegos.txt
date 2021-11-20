@@ -1,11 +1,21 @@
 Arkanoid
+Asteroids
+Avengers
 Bubble Bobble
+Castelvania
+Double Dragon
 Frogger
+Galaga
 Metal Slug
 Mortal Kombat
+NBA JAM
 Out Run
+Pacman
 Pong
 Space Invaders
+Spider Man
+Star Wars
+Street Fighter II
 Tetris
 Tron
 Virtua Cop

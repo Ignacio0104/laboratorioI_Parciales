@@ -49,6 +49,45 @@ int pedirNombre(char pResultado[],int lenght, int reintentos, char* variableText
 
 }
 
+
+int pedirNombreSalonJuego(char pResultado[],int lenght, int reintentos, char* variableTexto, char* textoError)
+{
+	int retorno=-1;
+	char bufferCadenaAux[128];
+	int i;
+
+	if(pResultado != NULL && reintentos >0 && lenght>0 && variableTexto != NULL && textoError != NULL)
+	{
+
+		for (i=0; i<=reintentos; i++)
+		{
+			printf("%s",variableTexto);
+
+			if (myGets(bufferCadenaAux,sizeof(bufferCadenaAux))==0)
+			{
+				if(esNombreSalonJuego(bufferCadenaAux)==0)
+				{
+
+					retorno = 0; // OK
+					strncpy (pResultado,bufferCadenaAux,lenght);
+					break;
+					}else
+					{
+						printf("%s\n",textoError);
+					}
+
+				} else
+				{
+					printf("%s\n",textoError);
+				}
+
+			}
+
+	}
+	return retorno;
+
+}
+
 int esNombre(char cadena[])
 {
 	int retorno;
@@ -113,7 +152,7 @@ int esNombreSalonJuego (char cadena[])
 	{
 		for(i=0;cadena[i]!='\0';i++)
 		{
-			if((cadena[i]>='A'&& cadena[i]<='z') ||(cadena[i]>='0'&& cadena[i]<='9') || (cadena[i]==32||cadena[i]=='.'))
+			if((cadena[i]>='A'&& cadena[i]<='z') ||(cadena[i]>='0'&& cadena[i]<='9') || (cadena[i]==32||cadena[i]=='.'||cadena[i]=='-'))
 			{
 				retorno=0;
 			} else

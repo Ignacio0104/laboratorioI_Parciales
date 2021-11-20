@@ -20,48 +20,67 @@ int main()
 	setbuf(stdout,NULL);
     int eleccionUsuario;
     char banderaCierre='n';
+    char banderaListaJuegos='n';
+    char banderaListaMultijugador='n';
     LinkedList* listaArcades = ll_newLinkedList();
     LinkedList* listaJuegos = ll_newLinkedList();
     LinkedList* listaArcadesMultijugador;
 
-   eleccionUsuario=controller_MainMenu();
+    if(controller_loadFromText("dataArcades.csv",listaArcades)==0)
+    {
+    	  eleccionUsuario=controller_MainMenu();
+    } else
+    {
+    	printf("Hubo un error. Favor verificar el archivo de origen");
+    }
 
     while(banderaCierre!='s')
     {
         switch(eleccionUsuario)
         {
             case 1:
-            	controller_loadFromText("dataArcades.csv",listaArcades);
-                eleccionUsuario=controller_MainMenu();
-                break;
-            case 2:
             	if(controller_addArcade(listaArcades)==0)
             	{
             		controller_saveAsText("dataArcades.csv",listaArcades);
             	}
             	eleccionUsuario=controller_MainMenu();
                 break;
-            case 3:
+            case 2:
             	if(controller_editArcade(listaArcades)==0)
             	{
             		controller_saveAsText("dataArcades.csv",listaArcades);
             	}
             	eleccionUsuario=controller_MainMenu();
                 break;
-            case 4:
+            case 3:
             	controller_removeArcade(listaArcades);
             	eleccionUsuario=controller_MainMenu();
                 break;
-            case 5:
+            case 4:
             	controller_ListArcades(listaArcades);
             	eleccionUsuario=controller_MainMenu();
                 break;
-            case 6:
-            	controller_addJuego(listaArcades,listaJuegos);
+            case 5:
+
+            	if(banderaListaJuegos=='s')
+            	{
+            		ll_clear(listaJuegos);
+            		if(controller_addJuego(listaArcades,listaJuegos)==0)
+					{
+						banderaListaJuegos='s';
+					}
+            	} else
+            	{
+                	if(controller_addJuego(listaArcades,listaJuegos)==0)
+                	{
+                		banderaListaJuegos='s';
+                	}
+            	}
             	controller_ListJuego(listaJuegos);
+            	printf("La lista de juegos tiene una longitud de %d",ll_len(listaJuegos));
             	eleccionUsuario=controller_MainMenu();
                 break;
-            case 7:
+            case 6:
             	listaArcadesMultijugador=ll_subList(listaArcades,0,ll_len(listaArcades));
             	if(listaArcadesMultijugador!=NULL)
             	{
@@ -70,16 +89,21 @@ int main()
 
             	}
             	controller_ListArcades(listaArcadesMultijugador);
+            	printf("La lista de arcades tiene una longitud de %d",ll_len(listaArcadesMultijugador));
+            	eleccionUsuario=controller_MainMenu();
+                break;
+            case 7:
+            	controller_dobleFichas(listaArcades);
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 8:
-            	ll_map (listaArcades,arcade_doubleToken);
-            	eleccionUsuario=controller_MainMenu();
-                break;
-            case 9:
         		printf("Saliendo del sistema....\n");
+        		//ll_clear(listaArcades);
+        		ll_deleteLinkedList(listaArcades);
+        		//ll_clear(listaArcadesMultijugador);
 				banderaCierre='s';
-				break;
+                break;
+
         }
     }
     return 0;

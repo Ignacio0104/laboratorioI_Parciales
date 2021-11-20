@@ -75,10 +75,10 @@ int arcade_askForInformation(char *pNacionalidad, int* pSonido, int* pJugadores,
 				{
 					if(pedirIntIntentosRango(&fichasAux,1, INT_MAX, 3, "Ingrese la cantidad de fichas: ", "Error, dato ingresado inválido")==0)
 					{
-						if(pedirNombre(salonAux,NOMBRE_LEN, 3, "Ingrese el nombre del Salón: ", "Error, dato ingresado inválido")==0)
+						if(pedirNombreSalonJuego(salonAux,NOMBRE_LEN, 3, "Ingrese el nombre del Salón: ", "Error, dato ingresado inválido")==0)
 						{
 
-							if(pedirNombre(juegoAux,NOMBRE_LEN, 3, "Ingrese el juego: ", "Error, dato ingresado inválido")==0)
+							if(pedirNombreSalonJuego(juegoAux,NOMBRE_LEN, 3, "Ingrese el juego: ", "Error, dato ingresado inválido")==0)
 								{
 									strncpy(pNacionalidad,nacionalidadAux,NOMBRE_LEN);
 									*pSonido=sonidoAux;
@@ -102,7 +102,7 @@ int arcade_createFirstId (LinkedList* pArrayArcade)
 {
 	int idAnterior;
 	int idNueva;
-	idAnterior=6;
+	idAnterior=arcade_findLastId(pArrayArcade);
 
 	if(idAnterior>=0)
 	{
@@ -322,6 +322,39 @@ int arcade_findById(LinkedList* pArrayArcade,int id)
 	return retorno;
 }
 
+
+int arcade_findLastId(LinkedList* pArrayArcade)
+{
+	Arcade* pElemento;
+	int idLista;
+	int longitud;
+	int idMaxima=-1;
+
+	if(pArrayArcade!=NULL)
+	{
+		idMaxima=0;
+		longitud=ll_len(pArrayArcade);
+		for(int i=0;i<longitud;i++)
+		{
+			if(ll_get(pArrayArcade, i)!=NULL)
+			{
+				pElemento=ll_get(pArrayArcade, i);
+
+				arcade_getId(pElemento,&idLista);
+
+				if(idLista>idMaxima)
+				{
+					idMaxima=idLista;
+				}
+
+			}
+
+		}
+
+	}
+
+	return idMaxima;
+}
 int arcade_mostrarJuegos(LinkedList* pArrayArcade)
 {
 	int retorno=-1;
@@ -400,6 +433,7 @@ int arcade_doubleToken(void* pArcade)
     	arcade_getFichas(pArcade,&fichasAux);
     	fichasAux=fichasAux*2;
     	arcade_setFichas(pArcade,fichasAux);
+    	retorno=0;
 
 	}
 

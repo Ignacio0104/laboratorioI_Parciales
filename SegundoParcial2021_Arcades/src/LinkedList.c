@@ -251,16 +251,13 @@ int ll_remove(LinkedList* this,int index)
 int ll_clear(LinkedList* this)
 {
     int returnAux = -1;
-
-    int i;
     if(this!=NULL)
     {
-        for(i=0;i<ll_len(this);i++)
+    	for(int i=ll_len(this);i>=0;i--)
         {
-        	ll_remove(this,0);
-
+    		returnAux=ll_remove(this,0);
         }
-        returnAux=0;
+
 
     }
 
@@ -604,7 +601,10 @@ int ll_map (LinkedList* this,int (*pFunc)(void*))
 
 			if(pAuxiliar!=NULL)
 			{
-				pFunc(pAuxiliar);
+				if(pFunc(pAuxiliar)==0)
+				{
+					returnAux=0;
+				}
 			}
 		}
 	}

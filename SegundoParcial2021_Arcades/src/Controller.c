@@ -16,17 +16,16 @@ int controller_MainMenu (void)
 {
 	int userChoice=-1;
 
-	 pedirIntIntentosRango(&userChoice, 1, 9, 5,
+	 pedirIntIntentosRango(&userChoice, 1, 8, 5,
 	"\n====MENU====\n\n"
-	"1)Leer arcades desde archivo csv.\n"
-	"2)Incorporar Arcade.\n"
-	"3)Modificar Arcade\n"
-	"4)Elimiar Arcade\n"
-	"5)Mostrar Arcades\n"
-	"6)Generar archivo con JUEGOS\n"
-	"7)Generar archivo con arcades Multijugador\n"
-	"8)Actualizar cantidad de fichas.\n"
-	"9)Salir.\n", "Error, dato ingresado inválido");
+	"1)Incorporar Arcade.\n"
+	"2)Modificar Arcade\n"
+	"3)Elimiar Arcade\n"
+	"4)Mostrar Arcades\n"
+	"5)Generar archivo con JUEGOS\n"
+	"6)Generar archivo con arcades Multijugador\n"
+	"7)Actualizar cantidad de fichas.\n"
+	"8)Salir.\n", "Error, dato ingresado inválido");
 
 	 return userChoice;
 }
@@ -140,11 +139,9 @@ int controller_addJuego(LinkedList* pArrayListArcades,LinkedList* pArrayJuegos)
 		if(f!=NULL)
 		{
 			retorno=0;
-
 			for(int i=0;i<lenght;i++)
 			{
 				pArcadeUno=ll_get(pArrayListArcades,i);
-
 				pArcadeDos=ll_get(pArrayListArcades,i+1);
 
 				arcade_getJuego(pArcadeUno,pruebaNombre);
@@ -154,32 +151,43 @@ int controller_addJuego(LinkedList* pArrayListArcades,LinkedList* pArrayJuegos)
 
 					if(criterio==1||criterio==-1)
 					{
-
 						arcade_getJuego(pArcadeUno,nombreJuegoAux);
 						pJuegoAux=juego_newParametros(nombreJuegoAux);
-						if(nombreJuegoAux!=NULL)
+						if(pJuegoAux!=NULL)
 						{
-							fprintf(f,"%s\n",nombreJuegoAux);
-							ll_add(pArrayJuegos,pJuegoAux);
-						}
-
-					}
-
-					if(pArcadeDos==NULL)
-					{
-						pArcadeDos=ll_get(pArrayListArcades,i-1);
-
-						if(arcade_compareGame(pArcadeUno,pArcadeDos)==0)
-						{
-							arcade_getJuego(pArcadeUno,nombreJuegoAux);
-							pJuegoAux=juego_newParametros(nombreJuegoAux);
-							if(nombreJuegoAux!=NULL)
+							if(ll_contains(pArrayJuegos, pJuegoAux)==0)
 							{
 								fprintf(f,"%s\n",nombreJuegoAux);
 								ll_add(pArrayJuegos,pJuegoAux);
+							} else
+							{
+								free(pJuegoAux);
+								continue;
+							}
+
+						}
+
+					} else
+					{
+						if(pArcadeDos==NULL)
+						{
+							pArcadeDos=ll_get(pArrayListArcades,i-1);
+
+							if(arcade_compareGame(pArcadeUno,pArcadeDos)==0)
+							{
+								arcade_getJuego(pArcadeUno,nombreJuegoAux);
+								pJuegoAux=juego_newParametros(nombreJuegoAux);
+								if(nombreJuegoAux!=NULL)
+								{
+									fprintf(f,"%s\n",nombreJuegoAux);
+									ll_add(pArrayJuegos,pJuegoAux);
+									break;
+								}
 							}
 						}
 					}
+
+
 			}
 
 			fclose(f);
@@ -413,7 +421,6 @@ int controller_removeArcade(LinkedList* pArrayListArcades)
 						}
 					}
 
-
 				}
 				else
 				{
@@ -443,6 +450,31 @@ int controller_sortArcade(LinkedList* pArrayListArcades)
 		{
 			if(ll_sort(pArrayListArcades,arcade_compareGame,0)==0)
 			{
+				retorno=0;
+			}
+		}else
+		{
+			printf("\nNo hay juegos cargados para ordenar\n");
+		}
+
+	}
+
+    return retorno;
+}
+
+int controller_dobleFichas(LinkedList* pArrayListArcades)
+{
+    int retorno=-1;
+	int lenght;
+
+	if (pArrayListArcades!=NULL)
+	{
+		lenght=ll_len(pArrayListArcades);
+		if(lenght>0)
+		{
+			if(ll_map(pArrayListArcades,arcade_doubleToken)==0)
+			{
+				printf(">>> Fichas de todos los arcades duplicadas <<<");
 				retorno=0;
 			}
 		}else
