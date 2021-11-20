@@ -66,7 +66,8 @@ int main()
             	if(listaArcadesMultijugador!=NULL)
             	{
             		ll_filter(listaArcadesMultijugador,arcade_filtroMultijugador);
-            		printf("Filtrado\n\n");
+                	controller_saveAsText("multijugador.csv",listaArcades);
+
             	}
             	controller_ListArcades(listaArcadesMultijugador);
             	eleccionUsuario=controller_MainMenu();

@@ -370,12 +370,12 @@ int arcade_mostrarJuegos(LinkedList* pArrayArcade)
 int arcade_filtroMultijugador(void* pArcade)
 {
     int retorno=-2;
-
+    Arcade* prueba=(Arcade*)pArcade;
     int jugadoresAux;
 
     if(pArcade!=NULL)
 	{
-		arcade_getJugadores(pArcade,&jugadoresAux);
+		arcade_getJugadores(prueba,&jugadoresAux);
 
 		if (jugadoresAux==1)
 		{
@@ -394,8 +394,6 @@ int arcade_doubleToken(void* pArcade)
 {
     int retorno=-2;
     int fichasAux;
-
-
 
     if(pArcade!=NULL)
 	{

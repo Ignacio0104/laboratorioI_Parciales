@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "LinkedList.h"
+#include "Arcades.h"
 
 
 
@@ -616,19 +617,21 @@ int ll_filter (LinkedList* this,int (*pFunc)(void*))
 	int returnAux=-1;
 	void* pAuxiliar;
 	int criterio;
+	int jugadoresAux;
 
 	if(this!=NULL && pFunc!=NULL)
 	{
-		for(int i=0;i<=ll_len(this);i++)
+		for(int i=ll_len(this);i>=0;i--)
 		{
 			pAuxiliar=ll_get(this,i);
 
 			criterio=pFunc(pAuxiliar);
 
+			arcade_getJugadores(pAuxiliar,&jugadoresAux);
+
 			if(criterio==0)
 			{
-				ll_remove(this,i);
-				returnAux=0;
+				returnAux=ll_remove(this,i);
 			}
 
 		}
