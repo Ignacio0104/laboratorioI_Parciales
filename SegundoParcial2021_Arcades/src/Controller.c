@@ -122,13 +122,12 @@ int controller_addJuego(LinkedList* pArrayListArcades,LinkedList* pArrayJuegos)
 {
 	int retorno=-1;
 	int lenght;
-	char nombreJuegoAux[63];
+	char nombreJuegoAux[GAME_LEN];
 	int criterio;
 	Arcade* pArcadeUno;
 	Arcade* pArcadeDos;
 	Juego* pJuegoAux;
-	char pruebaNombre[63];
-	char pruebaNombre2[63];
+
 
 	if(pArrayListArcades!=NULL)
 	{
@@ -144,8 +143,6 @@ int controller_addJuego(LinkedList* pArrayListArcades,LinkedList* pArrayJuegos)
 				pArcadeUno=ll_get(pArrayListArcades,i);
 				pArcadeDos=ll_get(pArrayListArcades,i+1);
 
-				arcade_getJuego(pArcadeUno,pruebaNombre);
-				arcade_getJuego(pArcadeDos,pruebaNombre2);
 
 				criterio=arcade_compareGame(pArcadeUno,pArcadeDos);
 
@@ -299,6 +296,7 @@ int controller_ListArcades(LinkedList* pArrayListArcades)
 	{
 		retorno=0;
 		length=ll_len(pArrayListArcades);
+		controller_sortArcade(pArrayListArcades);
 		if(length>0)
 		{
 			for (i=0;length>i;i++)
@@ -312,7 +310,7 @@ int controller_ListArcades(LinkedList* pArrayListArcades)
 			}
 		} else
 		{
-			printf("\nNo hay ningún empleado cargado para mostrar\n");
+			printf("\nNo hay ningún arcade cargado para mostrar\n");
 		}
 
 	}

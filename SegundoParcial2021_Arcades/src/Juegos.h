@@ -13,10 +13,11 @@
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
+#define GAME_LEN 63
 
 typedef struct {
 
-	char gameName[63];
+	char gameName[GAME_LEN];
 
 }Juego;
 

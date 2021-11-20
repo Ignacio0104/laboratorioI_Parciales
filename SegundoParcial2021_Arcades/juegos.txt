@@ -14,6 +14,7 @@ Pacman
 Pong
 Space Invaders
 Spider Man
+Spider-Man
 Star Wars
 Street Fighter II
 Tetris

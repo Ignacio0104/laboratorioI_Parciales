@@ -31,7 +31,7 @@ int main()
     	  eleccionUsuario=controller_MainMenu();
     } else
     {
-    	printf("Hubo un error. Favor verificar el archivo de origen");
+    	printf("Hubo un error. Favor verificar el archivo de origen\n");
     }
 
     while(banderaCierre!='s')
@@ -86,7 +86,7 @@ int main()
             	{
             		ll_filter(listaArcadesMultijugador,arcade_filtroMultijugador);
                 	controller_saveAsText("multijugador.csv",listaArcades);
-
+                	banderaListaMultijugador='s';
             	}
             	controller_ListArcades(listaArcadesMultijugador);
             	printf("La lista de arcades tiene una longitud de %d",ll_len(listaArcadesMultijugador));
@@ -98,12 +98,18 @@ int main()
                 break;
             case 8:
         		printf("Saliendo del sistema....\n");
-        		//ll_clear(listaArcades);
         		ll_deleteLinkedList(listaArcades);
-        		//ll_clear(listaArcadesMultijugador);
+        		if(banderaListaJuegos=='s')
+        			{
+        				ll_deleteLinkedList(listaJuegos);
+        			}
+
+        		if(banderaListaMultijugador=='s')
+        		{
+            		ll_deleteLinkedList(listaArcadesMultijugador);
+        		}
 				banderaCierre='s';
                 break;
-
         }
     }
     return 0;

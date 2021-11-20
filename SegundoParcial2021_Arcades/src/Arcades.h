@@ -13,15 +13,17 @@
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
+#define NOMBRE_LEN 128
+#define GAME_LEN 63
 
 typedef struct {
 
-	char nationality[128];
+	char nationality[NOMBRE_LEN];
 	int soundType;
 	int numberOfPlayers;
 	int maximumTokens;
-	char gameName[63];
-	char salonName[128];
+	char gameName[GAME_LEN];
+	char salonName[NOMBRE_LEN];
 	int idArcade;
 
 }Arcade;
