@@ -58,6 +58,7 @@ int main()
                 break;
             case 4:
             	controller_ListArcades(listaArcades);
+            	printf("La longitud de la lista es %d",ll_len(listaArcades));
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 5:
