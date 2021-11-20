@@ -63,7 +63,7 @@ int arcade_askForInformation(char *pNacionalidad, int* pSonido, int* pJugadores,
 	int jugadoresAux;
 	int fichasAux;
 	char salonAux[NOMBRE_LEN];
-	char juegoAux[NOMBRE_LEN];
+	char juegoAux[GAME_LEN];
 
 	if(pNacionalidad!=NULL&&pSonido!=NULL&&pJugadores!=NULL&&pFichas!=NULL&&pSalon!=NULL&&pJuego!=NULL)
 	{
@@ -75,10 +75,10 @@ int arcade_askForInformation(char *pNacionalidad, int* pSonido, int* pJugadores,
 				{
 					if(pedirIntIntentosRango(&fichasAux,1, INT_MAX, 3, "Ingrese la cantidad de fichas: ", "Error, dato ingresado inválido")==0)
 					{
-						if(pedirNombreSalonJuego(salonAux,NOMBRE_LEN, 3, "Ingrese el nombre del Salón: ", "Error, dato ingresado inválido")==0)
+						if(pedirNombreSalon(salonAux,NOMBRE_LEN, 3, "Ingrese el nombre del Salón: ", "Error, dato ingresado inválido")==0)
 						{
 
-							if(pedirNombreSalonJuego(juegoAux,NOMBRE_LEN, 3, "Ingrese el juego: ", "Error, dato ingresado inválido")==0)
+							if(pedirNombreJuego(juegoAux,GAME_LEN, 3, "Ingrese el juego: ", "Error, dato ingresado inválido")==0)
 								{
 									strncpy(pNacionalidad,nacionalidadAux,NOMBRE_LEN);
 									*pSonido=sonidoAux;

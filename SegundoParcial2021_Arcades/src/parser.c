@@ -46,7 +46,7 @@ int parser_ArcadeFromText(FILE* pFile , LinkedList* pArrayArcades)
 					}
 					else
 					{
-						//employee_delete(pArcadeAux);
+						arcade_delete(pArcadeAux);
 						retorno=-1;
 						break;
 					}
@@ -64,7 +64,7 @@ int parser_ArcadeFromText(FILE* pFile , LinkedList* pArrayArcades)
 
 	if(banderaError=='s')
 	{
-		printf("Se detectó uno o más errores al importar el archivo. Favor imprimir lista (opción 6) y verificar que esté correcta\n");
+		printf("Se detectó uno o más errores al importar el archivo. Favor imprimir lista (opción 4) y verificar que esté correcta\n");
 	}
 
 

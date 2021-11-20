@@ -94,7 +94,10 @@ int main()
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 7:
-            	controller_dobleFichas(listaArcades);
+            	if(controller_dobleFichas(listaArcades)==0)
+            	{
+            		controller_saveAsText("dataArcades.csv",listaArcades);
+            	}
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 8:

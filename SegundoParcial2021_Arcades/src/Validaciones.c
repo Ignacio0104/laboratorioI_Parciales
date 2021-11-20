@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#define NOMBRE_LEN 128
+#define GAME_LEN 63
 static int myGets(char pResultado[], int len);
 
 
@@ -50,10 +52,48 @@ int pedirNombre(char pResultado[],int lenght, int reintentos, char* variableText
 }
 
 
-int pedirNombreSalonJuego(char pResultado[],int lenght, int reintentos, char* variableTexto, char* textoError)
+int pedirNombreSalon(char pResultado[],int lenght, int reintentos, char* variableTexto, char* textoError)
 {
 	int retorno=-1;
-	char bufferCadenaAux[128];
+	char bufferCadenaAux[NOMBRE_LEN];
+	int i;
+
+	if(pResultado != NULL && reintentos >0 && lenght>0 && variableTexto != NULL && textoError != NULL)
+	{
+
+		for (i=0; i<=reintentos; i++)
+		{
+			printf("%s",variableTexto);
+
+			if (myGets(bufferCadenaAux,sizeof(bufferCadenaAux))==0)
+			{
+				if(esNombreSalonJuego(bufferCadenaAux)==0)
+				{
+
+					retorno = 0; // OK
+					strncpy (pResultado,bufferCadenaAux,lenght);
+					break;
+					}else
+					{
+						printf("%s\n",textoError);
+					}
+
+				} else
+				{
+					printf("%s\n",textoError);
+				}
+
+			}
+
+	}
+	return retorno;
+
+}
+
+int pedirNombreJuego(char pResultado[],int lenght, int reintentos, char* variableTexto, char* textoError)
+{
+	int retorno=-1;
+	char bufferCadenaAux[GAME_LEN];
 	int i;
 
 	if(pResultado != NULL && reintentos >0 && lenght>0 && variableTexto != NULL && textoError != NULL)
