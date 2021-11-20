@@ -72,8 +72,7 @@ int main()
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 8:
-            	printf("En construcción...\n");
-            	//controller_doubleTokens();
+            	ll_map (listaArcades,arcade_doubleToken);
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 9:

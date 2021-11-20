@@ -18,6 +18,7 @@
 
 #ifndef LINKEDLIST
 #define LINKEDLIST
+
 struct Node
 {
     void* pElement;

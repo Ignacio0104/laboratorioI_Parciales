@@ -1,7 +1,11 @@
-Avengers
-Halo
-Megaman
-Metal Slug III
-NBA JAM
-Pacman
-Rayman
+Arkanoid
+Bubble Bobble
+Frogger
+Metal Slug
+Mortal Kombat
+Out Run
+Pong
+Space Invaders
+Tetris
+Tron
+Virtua Cop

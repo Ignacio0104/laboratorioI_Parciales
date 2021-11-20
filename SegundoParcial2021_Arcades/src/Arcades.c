@@ -375,16 +375,34 @@ int arcade_filtroMultijugador(void* pArcade)
 
     if(pArcade!=NULL)
 	{
-		arcade_getJugadores((Arcade*)pArcade,&jugadoresAux);
+		arcade_getJugadores(pArcade,&jugadoresAux);
 
-
-		if (jugadoresAux>1)
+		if (jugadoresAux==1)
 		{
 			retorno=0;
+			arcade_delete(pArcade);
 		} else
 		{
-			retorno=-1;
+			retorno=1;
 		}
+	}
+
+    return retorno;
+}
+
+int arcade_doubleToken(void* pArcade)
+{
+    int retorno=-2;
+    int fichasAux;
+
+
+
+    if(pArcade!=NULL)
+	{
+    	arcade_getFichas(pArcade,&fichasAux);
+    	fichasAux=fichasAux*2;
+    	arcade_setFichas(pArcade,fichasAux);
+
 	}
 
     return retorno;
@@ -715,7 +733,7 @@ int arcade_setSalon(Arcade* this,char* salon)
 	{
 		retorno=-2;
 
-		if(esTexto(salon)==0)
+		if(esNombreSalonJuego(salon)==0)
 		{
 			strncpy(this->salonName,salon,NOMBRE_LEN);
 			retorno=0;
@@ -731,7 +749,7 @@ int arcade_getSalon(Arcade* this,char* salon)
 	if(this!=NULL&&salon!=NULL)
 	{
 		retorno=-2;
-		if(esTexto(this->salonName)==0)
+		if(esNombreSalonJuego(this->salonName)==0)
 		{
 			strncpy(salon,this->salonName,NOMBRE_LEN);
 			retorno=0;
@@ -747,7 +765,7 @@ int arcade_setJuego(Arcade* this,char* juego)
 	if(this!=NULL&&juego!=NULL)
 	{
 		retorno=-2;
-		if(esTexto(juego)==0)
+		if(esNombreSalonJuego(juego)==0)
 		{
 			strncpy(this->gameName,juego,GAME_LEN);
 			retorno=0;
@@ -763,7 +781,7 @@ int arcade_getJuego(Arcade* this,char* juego)
 	if(this!=NULL&&juego!=NULL)
 	{
 		retorno=-2;
-		if(esTexto(this->gameName)==0)
+		if(esNombreSalonJuego(this->gameName)==0)
 		{
 			strncpy(juego,this->gameName,GAME_LEN);
 			retorno=0;

@@ -102,4 +102,33 @@ static int myGets(char pResultado[], int len)
 	return retorno;
 }
 
+int esNombreSalonJuego (char cadena[])
+{
+	int retorno;
+	int i;
+
+	retorno=-1;
+
+	if(cadena!=NULL&&strlen(cadena)>0)
+	{
+		for(i=0;cadena[i]!='\0';i++)
+		{
+			if((cadena[i]>='A'&& cadena[i]<='z') ||(cadena[i]>='0'&& cadena[i]<='9') || (cadena[i]==32||cadena[i]=='.'))
+			{
+				retorno=0;
+			} else
+			{
+
+				retorno=-1;
+				break;
+			}
+		}
+	}
+
+
+	return retorno;
+
+}
+
+
 

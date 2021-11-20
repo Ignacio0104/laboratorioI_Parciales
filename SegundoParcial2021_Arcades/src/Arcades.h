@@ -38,6 +38,7 @@ int arcade_compareGame(void* arcadeUno,void* arcadeDos);
 int arcade_mostrarJuegos(LinkedList* pArrayArcade);
 void arcade_delete(Arcade* this);
 int arcade_filtroMultijugador(void* pArcade);
+int arcade_doubleToken(void* pArcade);
 
 
 //// SETTERS Y GETTERS ////

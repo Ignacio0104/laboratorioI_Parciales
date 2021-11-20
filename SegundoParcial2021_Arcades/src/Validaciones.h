@@ -14,5 +14,6 @@
 
 int esNombre(char cadena[]);
 int pedirNombre(char pResultado[],int lenght, int reintentos, char* variableTexto, char* textoError);
+int esNombreSalonJuego (char cadena[]);
 
 #endif /* VALIDACIONES_H_ */

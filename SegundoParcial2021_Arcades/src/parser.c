@@ -36,7 +36,7 @@ int parser_ArcadeFromText(FILE* pFile , LinkedList* pArrayArcades)
 					,idAux,nacionalidadAux,tipoSonidoAux,jugadoresAux,fichasAux,salonAux,juegoAux)==7)
 			{
 				if(esNumerica(idAux)==0&&esTexto(nacionalidadAux)==0&&esTexto(tipoSonidoAux)==0&&esNumerica(jugadoresAux)==0&&esNumerica(fichasAux)==0
-						&&esTexto(salonAux)==0&&esTexto(juegoAux)==0)
+						&&esNombreSalonJuego(salonAux)==0&&esNombreSalonJuego(juegoAux)==0)
 				{
 					pArcadeAux = arcade_newParametros(idAux,nacionalidadAux,tipoSonidoAux,jugadoresAux,fichasAux,salonAux,juegoAux);
 					if(pArcadeAux!=NULL)

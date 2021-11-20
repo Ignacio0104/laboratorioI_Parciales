@@ -11,6 +11,7 @@
 
 
 
+
 static Node* getNode(LinkedList* this, int nodeIndex);
 static int addNode(LinkedList* this, int nodeIndex,void* pElement);
 
@@ -622,15 +623,14 @@ int ll_filter (LinkedList* this,int (*pFunc)(void*))
 		{
 			pAuxiliar=ll_get(this,i);
 
-			if(pAuxiliar!=NULL)
-			{
-				criterio=pFunc(pAuxiliar);
+			criterio=pFunc(pAuxiliar);
 
-				if(criterio==0)
-				{
-					returnAux=ll_remove(this,i);
-				}
+			if(criterio==0)
+			{
+				ll_remove(this,i);
+				returnAux=0;
 			}
+
 		}
 	}
 

@@ -1,11 +1,26 @@
-ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
-23,ARG,MONO,2,9000,Perez,Avengers
-3,AU,MONO,1,700,Sacoa,Megaman
-1,ARG,ESTEREO,4,1000,Sacoa,Metal Slug III
-6,US,ESTEREO,6,3000,Fichines,Metal Slug III
-5,US,ESTEREO,4,1500,Center Game,NBA JAM
-13,ARG,ESTEREO,5,1000,Sacoa,Pacman
-4,CH,ESTEREO,3,2000,TravelCase,Rayman
-22,RUSIA,ESTEREO,4,900,PRUEBAAAAA,TESTEOOO
-2,US,MONO,1,500,Sacoa,Tomb Raider III
-12,ARG,ESTEREO,5,8000,Prueba,Halo
+id,nacionalidad,tipo_sonido,cant_jug,fichas_max,salon,game
+1,China,STEREO,1,365,Salon 2021,Metal Slug
+2,China,STEREO,1,280,Salon 2,Mortal Kombat
+3,Philippines,STEREO,5,414,Salon Carreras,Bubble Bobble
+4,United States,STEREO,3,315,Salon 6,Mortal Kombat
+5,China,STEREO,5,443,Salon 3,Tetris
+6,Indonesia,STEREO,2,481,Salon Retro,Mortal Kombat
+7,Indonesia,MONO,2,428,Salon 1,Bubble Bobble
+8,Japan,MONO,2,396,Salon 1,Space Invaders
+9,Russia,MONO,5,498,Salon 2021,Out Run
+10,Indonesia,STEREO,2,320,Salon 2021,Virtua Cop
+11,China,MONO,4,278,Salon Carreras,Space Invaders
+12,Portugal,STEREO,1,476,Salon 6,Frogger
+13,Philippines,MONO,5,124,Salon Retro,Tron
+14,Indonesia,STEREO,2,347,Salon Carreras,Metal Slug
+15,Sweden,STEREO,3,434,Salon 3,Out Run
+16,Russia,MONO,1,306,Salon VR,Metal Slug
+17,Madagascar,MONO,1,333,Salon 6,Out Run
+18,Sweden,MONO,2,380,Salon 2021,Virtua Cop
+19,Ethiopia,MONO,2,105,Salon 6,Virtua Cop
+20,Brazil,MONO,3,343,Salon 3,Pong
+21,China,MONO,1,225,Salon 2,Tron
+22,Philippines,STEREO,3,456,Salon 6,Bubble Bobble
+23,Belarus,STEREO,2,415,Salon 3,Space Invaders
+24,Sri Lanka,STEREO,5,333,Salon 1,Virtua Cop
+25,China,STEREO,3,284,Salon VR,Arkanoid

@@ -128,6 +128,8 @@ int controller_addJuego(LinkedList* pArrayListArcades,LinkedList* pArrayJuegos)
 	Arcade* pArcadeUno;
 	Arcade* pArcadeDos;
 	Juego* pJuegoAux;
+	char pruebaNombre[63];
+	char pruebaNombre2[63];
 
 	if(pArrayListArcades!=NULL)
 	{
@@ -139,16 +141,35 @@ int controller_addJuego(LinkedList* pArrayListArcades,LinkedList* pArrayJuegos)
 		{
 			retorno=0;
 
-			for(int i=0;i<=lenght;i++)
+			for(int i=0;i<lenght;i++)
 			{
 				pArcadeUno=ll_get(pArrayListArcades,i);
+
 				pArcadeDos=ll_get(pArrayListArcades,i+1);
 
-				if(pArcadeUno!=NULL&&pArcadeDos!=NULL)
-				{
-					criterio=arcade_compareGame(pArcadeUno,pArcadeDos);
+				arcade_getJuego(pArcadeUno,pruebaNombre);
+				arcade_getJuego(pArcadeDos,pruebaNombre2);
 
-						if(criterio==1||criterio==-1)
+				criterio=arcade_compareGame(pArcadeUno,pArcadeDos);
+
+					if(criterio==1||criterio==-1)
+					{
+
+						arcade_getJuego(pArcadeUno,nombreJuegoAux);
+						pJuegoAux=juego_newParametros(nombreJuegoAux);
+						if(nombreJuegoAux!=NULL)
+						{
+							fprintf(f,"%s\n",nombreJuegoAux);
+							ll_add(pArrayJuegos,pJuegoAux);
+						}
+
+					}
+
+					if(pArcadeDos==NULL)
+					{
+						pArcadeDos=ll_get(pArrayListArcades,i-1);
+
+						if(arcade_compareGame(pArcadeUno,pArcadeDos)==0)
 						{
 							arcade_getJuego(pArcadeUno,nombreJuegoAux);
 							pJuegoAux=juego_newParametros(nombreJuegoAux);
@@ -157,11 +178,8 @@ int controller_addJuego(LinkedList* pArrayListArcades,LinkedList* pArrayJuegos)
 								fprintf(f,"%s\n",nombreJuegoAux);
 								ll_add(pArrayJuegos,pJuegoAux);
 							}
-
 						}
-
-				}
-
+					}
 			}
 
 			fclose(f);
