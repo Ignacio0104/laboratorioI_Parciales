@@ -86,7 +86,7 @@ int main()
             	if(listaArcadesMultijugador!=NULL)
             	{
             		ll_filter(listaArcadesMultijugador,arcade_filtroMultijugador);
-                	controller_saveAsText("multijugador.csv",listaArcades);
+                	controller_saveAsText("multijugador.csv",listaArcadesMultijugador);
                 	banderaListaMultijugador='s';
             	}
             	controller_ListArcades(listaArcadesMultijugador);

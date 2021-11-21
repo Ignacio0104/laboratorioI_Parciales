@@ -192,7 +192,7 @@ int esNombreSalonJuego (char cadena[])
 	{
 		for(i=0;cadena[i]!='\0';i++)
 		{
-			if((cadena[i]>='A'&& cadena[i]<='z') ||(cadena[i]>='0'&& cadena[i]<='9') || (cadena[i]==32||cadena[i]=='.'||cadena[i]=='-'))
+			if((cadena[i]>='A'&& cadena[i]<='z') ||(cadena[i]>='0'&& cadena[i]<='9') || (cadena[i]==32||cadena[i]=='.'||cadena[i]=='-'||cadena[i]=='&'))
 			{
 				retorno=0;
 			} else

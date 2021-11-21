@@ -69,7 +69,9 @@ int arcade_askForInformation(char *pNacionalidad, int* pSonido, int* pJugadores,
 	{
 		if(pedirNombre(nacionalidadAux,NOMBRE_LEN, 3, "Ingrese la nacionalidad del arcade: ", "Error, dato ingresado inválido")==0)
 		{
-			if(pedirIntIntentosRango(&sonidoAux,1, 2, 3, "Ingrese el tipo de sonido 1)MONO 2)ESTEREO: ", "Error, dato ingresado inválido")==0)
+			if(pedirIntIntentosRango(&sonidoAux,1, 2, 3, "Ingrese el tipo de sonido \n"
+															"1)MONO\n"
+															"2)ESTEREO\n", "Error, dato ingresado inválido")==0)
 			{
 				if(pedirIntIntentosRango(&jugadoresAux,1, 6, 3, "Ingrese la cantidad de jugadores: ", "Error, dato ingresado inválido")==0)
 				{
@@ -156,13 +158,9 @@ int arcade_modify(Arcade* this,LinkedList* pArrayArcade)
 
 	if(this!=NULL)
 	{
-		printf("Que dato desea modificar?\n"
-					"1)Nombre del juego\n"
-					"2)Cantidad de jugadores\n"
-					"3)Salir\n");
+		userChoice=arcade_editMenu();
 
-
-			if(pedirIntIntentosRango(&userChoice, 1, 3, 3, "Ingrese aquí su opción: ", "Error")!=0)
+			if(userChoice<0)
 			{
 				userChoice=3;
 			}
@@ -189,16 +187,13 @@ int arcade_modify(Arcade* this,LinkedList* pArrayArcade)
 							printf("\nError al ingresar los datos\n");
 						}
 
-						printf("Que dato desea modificar?\n"
-									"1)Nombre del juego\n"
-									"2)Cantidad de jugadores\n"
-									"3)Salir\n");
+						userChoice=arcade_editMenu();
 
-
-							if(pedirIntIntentosRango(&userChoice, 1, 3, 3, "Ingrese aquí su opción: ", "Error")!=0)
+							if(userChoice<0)
 							{
 								userChoice=3;
 							}
+
 
 						break;
 					case 2:
@@ -219,16 +214,13 @@ int arcade_modify(Arcade* this,LinkedList* pArrayArcade)
 							printf("\nError al ingresar los datos\n");
 						}
 
-						printf("Que dato desea modificar?\n"
-									"1)Nombre del juego\n"
-									"2)Cantidad de jugadores\n"
-									"3)Salir\n");
+						userChoice=arcade_editMenu();
 
+							if(userChoice<0)
+							{
+								userChoice=3;
+							}
 
-						if(pedirIntIntentosRango(&userChoice, 1, 3, 3, "Ingrese aquí su opción: ", "Error")!=0)
-						{
-							userChoice=3;
-						}
 
 						break;
 					case 3:
@@ -243,6 +235,20 @@ int arcade_modify(Arcade* this,LinkedList* pArrayArcade)
 
 	return retorno;
 }
+
+int arcade_editMenu (void)
+{
+	int userChoice=-1;
+
+	 pedirIntIntentosRango(&userChoice, 1, 3, 5,
+			 "\n\nQue dato desea modificar?\n"
+			"	1)Nombre del juego\n"
+			"	2)Cantidad de jugadores\n"
+			"	3)Salir\n", "Error, dato ingresado inválido");
+
+	 return userChoice;
+}
+
 
 
 int arcade_printArcade(Arcade* this)
@@ -345,6 +351,7 @@ int arcade_findLastId(LinkedList* pArrayArcade)
 				if(idLista>idMaxima)
 				{
 					idMaxima=idLista;
+					printf("Encontré la última ID. Es %d",idMaxima);
 				}
 
 			}

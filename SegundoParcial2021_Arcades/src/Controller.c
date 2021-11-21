@@ -347,6 +347,8 @@ int controller_editArcade(LinkedList* pArrayListArcades)
 
 				if(pArcadeAux!=NULL)
 				{
+					printf("Se va a modificar el siguiente Arcade: \n\n");
+					arcade_printArcade(pArcadeAux);
 					if(arcade_modify(pArcadeAux,pArrayListArcades)==0)
 					{
 						retorno=0;
@@ -387,7 +389,7 @@ int controller_removeArcade(LinkedList* pArrayListArcades)
 	if(lenght>0)
 	{
 		controller_ListArcades(pArrayListArcades);
-		if(pedirInt(&idPedida, 1, "Ingrese el ID del arcade que desea borrar: \n", "Error, ID ingresada inválida\n")==0)
+		if(pedirInt(&idPedida, 1, "\n\nIngrese el ID del arcade que desea borrar: \n", "Error, ID ingresada inválida\n")==0)
 		 {
 			 posicionArcade=arcade_findById(pArrayListArcades,idPedida);
 				if(posicionArcade>=0)
