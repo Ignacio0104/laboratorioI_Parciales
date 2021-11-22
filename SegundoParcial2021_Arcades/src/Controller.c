@@ -203,7 +203,7 @@ int controller_ListJuego(LinkedList* pArrayJuegos)
 
 	if (pArrayJuegos!=NULL)
 	{
-		retorno=0;
+
 		length=ll_len(pArrayJuegos);
 		if(length>0)
 		{
@@ -212,7 +212,10 @@ int controller_ListJuego(LinkedList* pArrayJuegos)
 				pJuegoAux=ll_get(pArrayJuegos, i);
 				if(pJuegoAux!=NULL)
 				{
-					juego_printJuego(pJuegoAux);
+					if(juego_printJuego(pJuegoAux)==0)
+					{
+						retorno=0;
+					}
 				}
 
 			}
@@ -249,7 +252,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListArcades)
 
 	if(f!=NULL)
 	{
-		retorno=0;
+
 		fprintf(f,"ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego\n");
 		for(int i=0; i<ll_len(pArrayListArcades); i++)
 		{
@@ -273,6 +276,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListArcades)
 
 
 				fprintf(f,"%d,%s,%s,%d,%d,%s,%s\n",idAux,nacionalidadAux,tipoSonidoTxtAux,jugadoresAux,fichasAux,salonAux,juegoAux);
+				retorno=0;
 			}
 
 		}
