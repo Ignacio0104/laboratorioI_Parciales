@@ -44,7 +44,7 @@ Arcade* arcade_new();
 /// \param fichasStr Cantidad de fichas en formato cadena de char char
 /// \param salonStr Nombre del salno en formato cadena de char
 /// \param juegoStr Nombre del juego en formato cadena de char
-/// \return
+/// \return Devuelve el puntero a la estructura o NULL si no pudo crearse
 Arcade* arcade_newParametros(char* idStr,char* nacionalidadStr,char* sonidoStr,char* jugadoresStr,char*fichasStr,char*salonStr,char*juegoStr);
 
 /// \fn int arcade_printArcade(Arcade*)

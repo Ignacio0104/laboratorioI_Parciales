@@ -108,7 +108,15 @@ int pedirChar(char* pResultado, int reintentos, char* variableTexto, char* texto
 /// \return Return 0 si  salio bien. -1 si algunos de los parametros es invalido, o el sistema no pudo procesar el input del usuario
 int pedirCharSiNo(char* pResultado, char opcion1, char opcion2, int reintentos, char* variableTexto, char* textoError);
 
-
+/// \fn int pedirDireccion(char[], int, int, char*, char*)
+/// \brief Pide al usuario una cadena de char alfanumérica
+///
+/// \param pResultado puntero a la variable donde se guardara el char
+/// \param lenght Longitud maxima de la cadena
+/// \param reintentos Cantida de reintentos
+/// \param variableTexto recibe el texto que verá el usuario
+/// \param textoError recibe el texto que verá el usuario al equivocarse
+/// \return Return 0 si  salio bien. -1 si algunos de los parametros es invalido, o el sistema no pudo procesar el input del usuario
 int pedirDireccion(char pResultado[],int lenght, int reintentos, char* variableTexto, char* textoError);
 
 int pedirNumeroTxt(char pResultado[],int lenght, int reintentos, char* variableTexto, char* textoError);
