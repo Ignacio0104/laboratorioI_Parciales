@@ -14,7 +14,6 @@
 #include "Controller.h"
 #include "biblioteca_input.h"
 
-
 int main()
 {
 	setbuf(stdout,NULL);
@@ -53,16 +52,18 @@ int main()
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 3:
-            	controller_removeArcade(listaArcades);
+            	if(controller_removeArcade(listaArcades)==0)
+            	{
+            		controller_saveAsText("dataArcades.csv",listaArcades);
+            	}
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 4:
             	controller_ListArcades(listaArcades);
-            	printf("La longitud de la lista es %d",ll_len(listaArcades));
+            	printf("\nLa lista contiene %d elementos",ll_len(listaArcades));
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 5:
-
             	if(banderaListaJuegos=='s')
             	{
             		ll_clear(listaJuegos);
@@ -78,7 +79,7 @@ int main()
                 	}
             	}
             	controller_ListJuego(listaJuegos);
-            	printf("La lista de juegos tiene una longitud de %d",ll_len(listaJuegos));
+            	printf("\nLa lista contiene %d elementos",ll_len(listaJuegos));
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 6:
@@ -90,7 +91,7 @@ int main()
                 	banderaListaMultijugador='s';
             	}
             	controller_ListArcades(listaArcadesMultijugador);
-            	printf("La lista de arcades tiene una longitud de %d",ll_len(listaArcadesMultijugador));
+            	printf("\nLa lista contiene %d elementos",ll_len(listaArcadesMultijugador));
             	eleccionUsuario=controller_MainMenu();
                 break;
             case 7:

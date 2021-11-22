@@ -71,7 +71,7 @@ int arcade_askForInformation(char *pNacionalidad, int* pSonido, int* pJugadores,
 		{
 			if(pedirIntIntentosRango(&sonidoAux,1, 2, 3, "Ingrese el tipo de sonido \n"
 															"1)MONO\n"
-															"2)ESTEREO\n", "Error, dato ingresado inválido")==0)
+															"2)STEREO\n", "Error, dato ingresado inválido")==0)
 			{
 				if(pedirIntIntentosRango(&jugadoresAux,1, 6, 3, "Ingrese la cantidad de jugadores: ", "Error, dato ingresado inválido")==0)
 				{
@@ -276,7 +276,7 @@ int arcade_printArcade(Arcade* this)
 			strncpy(tipoSonidoTxtAux,"MONO",NOMBRE_LEN);
 		} else
 		{
-			strncpy(tipoSonidoTxtAux,"ESTEREO",NOMBRE_LEN);
+			strncpy(tipoSonidoTxtAux,"STEREO",NOMBRE_LEN);
 		}
 		arcade_getJugadores(this,&jugadoresAux);
 		arcade_getFichas(this,&fichasAux);
@@ -351,7 +351,6 @@ int arcade_findLastId(LinkedList* pArrayArcade)
 				if(idLista>idMaxima)
 				{
 					idMaxima=idLista;
-					printf("Encontré la última ID. Es %d",idMaxima);
 				}
 
 			}
@@ -492,26 +491,27 @@ int arcade_compareGame(void* arcadeUno,void* arcadeDos)
 }
 
 
-/*
-int arc_cambiarTexto (Arcade *pArrayArcade, int posicion, char pTextoConvertido[])
+
+int arcade_cambiarTexto (int sonido, char pTextoConvertido[])
 {
 	int retorno;
 
-	retorno=-1;
-	switch(arcadeList[posicion].soundType)
+	switch (sonido)
 	{
 		case TIPO_MONO:
 			retorno=0;
-			strncpy(pTextoConvertido,"Mono",32);
+			strncpy(pTextoConvertido,"MONO",32);
 			break;
 		case TIPO_ESTEREO:
-			strncpy(pTextoConvertido,"Estereo",32);
+			strncpy(pTextoConvertido,"STEREO",32);
 			retorno=0;
 			break;
 	}
 
+
+
 	return retorno;
-}*/
+}
 
 
 //// SETTERS Y GETTERS ////
@@ -613,15 +613,15 @@ int arcade_setSonidoTxt(Arcade* this,char* sonido)
 	if(this!=NULL&&sonido!=NULL)
 	{
 		retorno=-2;
-		if(esTexto(sonido)==0)
+		if(esTipoSonido(sonido)==0)
 		{
 			if(strcmp(sonido,"MONO")==0)
 			{
-				this->soundType=2;
+				this->soundType=TIPO_MONO;
 				retorno=0;
 			} else
 			{
-				this->soundType=1;
+				this->soundType=TIPO_ESTEREO;
 				retorno=0;
 			}
 
@@ -655,15 +655,7 @@ int arcade_getSonidoTxt(Arcade* this,char* sonido)
 		retorno=-2;
 		sonidoAux=this->soundType;
 
-		if(sonidoAux==1)
-		{
-			strncpy(sonido,"MONO",NOMBRE_LEN);
-			retorno=0;
-		} else
-		{
-			strncpy(sonido,"ESTEREO",NOMBRE_LEN);
-			retorno=0;
-		}
+		arcade_cambiarTexto(sonidoAux, sonido);
 	}
 
 	return retorno;

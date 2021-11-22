@@ -43,6 +43,7 @@ int arcade_filtroMultijugador(void* pArcade);
 int arcade_doubleToken(void* pArcade);
 int arcade_findLastId(LinkedList* pArrayArcade);
 int arcade_editMenu (void);
+int arcade_cambiarTexto (int sonido, char pTextoConvertido[]);
 
 
 //// SETTERS Y GETTERS ////

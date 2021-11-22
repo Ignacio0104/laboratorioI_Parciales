@@ -1,27 +1,19 @@
 ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 25,China,STEREO,3,568,Salon VR,Arkanoid
 58,China,MONO,3,676,Salon Carreras,Arkanoid
-87,Poland,STEREO,1,322,Salon 2,Arkanoid
 93,Philippines,STEREO,3,240,Salon Retro,Arkanoid
 95,United States,MONO,2,436,Salon 6,Arkanoid
-115,China,STEREO,1,354,Salon 5,Arkanoid
 125,Greece,STEREO,3,404,Salon 4,Arkanoid
 131,South Africa,MONO,2,580,Salon 5,Arkanoid
 187,Comoros,STEREO,2,550,Salon 5,Arkanoid
 188,Sweden,MONO,5,898,Salon Carreras,Arkanoid
-192,Brazil,MONO,1,290,Salon 5,Arkanoid
-195,Indonesia,MONO,1,678,Salon 3,Arkanoid
-205,Portugal,STEREO,1,1000,Salon 2021,Arkanoid
 251,Mongolia,MONO,3,348,Salon Carreras,Arkanoid
 262,Nigeria,MONO,4,564,Salon 2021,Arkanoid
-293,Qatar,MONO,1,788,Salon Carreras,Arkanoid
 297,Senegal,STEREO,2,734,Salon 6,Arkanoid
-326,China,MONO,1,846,Salon Retro,Arkanoid
 335,Ukraine,MONO,3,432,Salon 4,Arkanoid
 341,Russia,STEREO,4,458,Salon VR,Arkanoid
 353,Japan,MONO,5,368,Salon 4,Arkanoid
 369,United Kingdom,STEREO,4,404,Salon Carreras,Arkanoid
-371,China,MONO,1,788,Salon Carreras,Arkanoid
 391,China,STEREO,4,846,Salon 4,Arkanoid
 393,Philippines,STEREO,3,672,Salon Retro,Arkanoid
 439,China,STEREO,3,402,Salon VR,Arkanoid
@@ -38,12 +30,10 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 163,Russia,MONO,3,876,Salon 3,Asteroids
 165,Venezuela,STEREO,5,396,Salon 5,Asteroids
 168,Brazil,MONO,2,326,Salon 1,Asteroids
-240,Russia,STEREO,1,572,Salon 2021,Asteroids
 286,Poland,STEREO,4,478,Salon 5,Asteroids
 331,China,STEREO,5,660,Salon Carreras,Asteroids
 362,Democratic Republic of the Congo,MONO,2,762,Salon 6,Asteroids
 420,Sweden,STEREO,2,366,Salon 3,Asteroids
-422,Cameroon,MONO,1,602,Salon 3,Asteroids
 442,Dominican Republic,MONO,4,548,Salon 4,Asteroids
 482,Russia,STEREO,5,708,Salon 4,Asteroids
 3,Philippines,STEREO,5,828,Salon Carreras,Bubble Bobble
@@ -51,7 +41,6 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 22,Philippines,STEREO,3,912,Salon 6,Bubble Bobble
 26,Cyprus,STEREO,3,964,Salon Retro,Bubble Bobble
 50,Portugal,MONO,4,588,Salon 3,Bubble Bobble
-83,China,MONO,1,664,Salon 5,Bubble Bobble
 94,China,STEREO,5,884,Salon Retro,Bubble Bobble
 99,Philippines,STEREO,4,548,Salon Retro,Bubble Bobble
 108,Russia,STEREO,3,954,Salon 6,Bubble Bobble
@@ -61,30 +50,22 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 178,Belarus,STEREO,2,850,Salon Carreras,Bubble Bobble
 179,Benin,MONO,3,476,Salon 1,Bubble Bobble
 184,Sweden,MONO,3,510,Salon 6,Bubble Bobble
-197,Brazil,STEREO,1,578,Salon 5,Bubble Bobble
 206,United States,STEREO,5,634,Salon 6,Bubble Bobble
 242,Indonesia,STEREO,4,924,Salon 2,Bubble Bobble
 254,China,STEREO,5,422,Salon 1,Bubble Bobble
 266,China,STEREO,2,276,Salon Carreras,Bubble Bobble
 270,Sweden,STEREO,3,712,Salon 6,Bubble Bobble
 274,Russia,STEREO,3,712,Salon 1,Bubble Bobble
-275,Martinique,MONO,1,648,Salon Carreras,Bubble Bobble
 281,Greece,MONO,5,476,Salon 4,Bubble Bobble
-284,Bolivia,STEREO,1,776,Salon 5,Bubble Bobble
 305,France,STEREO,5,534,Salon 6,Bubble Bobble
-316,Czech Republic,STEREO,1,270,Salon 2021,Bubble Bobble
 320,Portugal,STEREO,3,664,Salon VR,Bubble Bobble
 365,Ethiopia,STEREO,4,976,Salon 2021,Bubble Bobble
 372,Russia,STEREO,4,442,Salon Retro,Bubble Bobble
 380,Indonesia,MONO,2,276,Salon 5,Bubble Bobble
-385,Bosnia and Herzegovina,MONO,1,632,Salon 2021,Bubble Bobble
-409,Peru,STEREO,1,418,Salon VR,Bubble Bobble
 415,China,STEREO,3,824,Salon VR,Bubble Bobble
-426,Nigeria,STEREO,1,602,Salon 1,Bubble Bobble
 446,Germany,STEREO,4,272,Salon VR,Bubble Bobble
 458,China,MONO,4,696,Salon VR,Bubble Bobble
 472,Iran,MONO,5,386,Salon 2,Bubble Bobble
-499,South Africa,STEREO,1,966,Salon 5,Bubble Bobble
 38,Philippines,MONO,2,374,Salon 5,Castelvania
 65,Indonesia,MONO,4,520,Salon 1,Castelvania
 80,Czech Republic,MONO,4,770,Salon Carreras,Castelvania
@@ -95,31 +76,21 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 155,China,MONO,3,794,Salon 6,Castelvania
 183,Japan,MONO,2,568,Salon 4,Castelvania
 198,Panama,STEREO,4,566,Salon Retro,Castelvania
-212,Portugal,MONO,1,974,Salon VR,Castelvania
-222,Russia,MONO,1,432,Salon 1,Castelvania
 248,United States,MONO,4,608,Salon 1,Castelvania
 267,Mozambique,MONO,3,828,Salon VR,Castelvania
 299,China,MONO,3,226,Salon 4,Castelvania
 312,Indonesia,STEREO,2,436,Salon 6,Castelvania
 322,Greece,MONO,5,286,Salon VR,Castelvania
-342,Indonesia,STEREO,1,698,Salon 3,Castelvania
 343,Albania,MONO,2,750,Salon 6,Castelvania
 349,Russia,STEREO,3,742,Salon VR,Castelvania
 350,China,STEREO,2,494,Salon 5,Castelvania
-366,United States,STEREO,1,978,Salon 1,Castelvania
 403,Czech Republic,MONO,5,336,Salon Carreras,Castelvania
 418,Russia,MONO,3,300,Salon Retro,Castelvania
 435,China,MONO,3,680,Salon 4,Castelvania
-452,China,MONO,1,894,Salon Retro,Castelvania
 485,France,MONO,4,284,Salon Carreras,Castelvania
 493,Chad,MONO,5,372,Salon VR,Castelvania
 29,Mauritius,STEREO,4,786,Salon 1,Double Dragon
-49,Colombia,MONO,1,260,Salon 2021,Double Dragon
-153,China,MONO,1,292,Salon 1,Double Dragon
-170,Brazil,MONO,1,926,Salon 5,Double Dragon
-194,France,MONO,1,254,Salon 4,Double Dragon
 214,Indonesia,MONO,5,988,Salon VR,Double Dragon
-234,Pakistan,STEREO,1,756,Salon 3,Double Dragon
 249,Greece,STEREO,2,690,Salon VR,Double Dragon
 258,Indonesia,MONO,2,464,Salon 2021,Double Dragon
 276,Indonesia,STEREO,2,446,Salon 2021,Double Dragon
@@ -134,53 +105,40 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 384,Japan,STEREO,2,268,Salon VR,Double Dragon
 396,China,MONO,4,878,Salon Carreras,Double Dragon
 397,Philippines,MONO,2,288,Salon 4,Double Dragon
-399,Indonesia,MONO,1,226,Salon 2,Double Dragon
 404,Indonesia,STEREO,4,702,Salon 3,Double Dragon
 405,Indonesia,MONO,5,788,Salon Retro,Double Dragon
 410,Russia,STEREO,5,322,Salon 3,Double Dragon
 425,Poland,STEREO,4,576,Salon 4,Double Dragon
 427,China,STEREO,5,332,Salon 2021,Double Dragon
 487,China,MONO,4,472,Salon 2021,Double Dragon
-491,Russia,STEREO,1,362,Salon VR,Double Dragon
 500,Morocco,MONO,4,654,Salon VR,Double Dragon
-12,Morocco,STEREO,1,952,Salon 6,Frogger
 123,Nigeria,STEREO,5,780,Salon Retro,Frogger
 142,France,MONO,5,988,Salon 2021,Frogger
 156,Nepal,MONO,5,434,Salon 2021,Frogger
-215,China,MONO,1,622,Salon VR,Frogger
 221,China,STEREO,2,878,Salon 3,Frogger
-237,China,STEREO,1,362,Salon 2,Frogger
 239,Brazil,MONO,2,422,Salon 6,Frogger
-246,France,STEREO,1,474,Salon 2,Frogger
 250,China,STEREO,3,670,Salon 3,Frogger
 257,Russia,MONO,2,574,Salon 2021,Frogger
 280,Russia,MONO,3,908,Salon VR,Frogger
 285,Thailand,STEREO,3,520,Salon 4,Frogger
 289,Sweden,MONO,2,454,Salon 3,Frogger
 292,China,MONO,4,308,Salon VR,Frogger
-300,China,MONO,1,858,Salon 2,Frogger
 303,Mexico,STEREO,5,394,Salon 3,Frogger
 310,China,STEREO,3,290,Salon Retro,Frogger
 355,Portugal,MONO,4,348,Salon 2,Frogger
 389,Indonesia,STEREO,4,294,Salon 2021,Frogger
 390,Liberia,MONO,3,446,Salon 6,Frogger
 432,Ukraine,STEREO,5,946,Salon 3,Frogger
-467,Czech Republic,MONO,1,994,Salon 2,Frogger
 39,China,STEREO,3,784,Salon 2021,Galaga
 48,Indonesia,MONO,3,744,Salon 1,Galaga
 55,Iran,MONO,2,938,Salon VR,Galaga
 70,Albania,STEREO,4,752,Salon VR,Galaga
 78,Colombia,STEREO,3,454,Salon 1,Galaga
-86,Philippines,MONO,1,706,Salon 6,Galaga
 160,Malaysia,STEREO,5,884,Salon 2,Galaga
-182,Sweden,MONO,1,216,Salon 6,Galaga
 217,Portugal,STEREO,2,1000,Salon Carreras,Galaga
-219,China,MONO,1,734,Salon 2021,Galaga
 247,Iran,MONO,5,954,Salon Carreras,Galaga
 279,Thailand,MONO,3,528,Salon Retro,Galaga
 306,Nicaragua,STEREO,5,244,Salon 2,Galaga
-309,China,STEREO,1,310,Salon Retro,Galaga
-318,Argentina,STEREO,1,446,Salon 2,Galaga
 346,Malaysia,STEREO,4,802,Salon VR,Galaga
 363,Philippines,MONO,2,662,Salon 2,Galaga
 379,Canada,MONO,4,200,Salon 2,Galaga
@@ -192,12 +150,9 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 449,China,MONO,5,952,Salon 4,Galaga
 451,Finland,STEREO,4,670,Salon 2021,Galaga
 460,Poland,MONO,5,576,Salon 2,Galaga
-484,China,MONO,1,888,Salon VR,Galaga
 498,Mozambique,MONO,4,718,Salon 2021,Galaga
 501,RUSIA,STEREO,6,400,Pepe III,Megaman
-1,RUSIA,STEREO,1,730,Salon 2021,Metal Slug
 14,Indonesia,STEREO,2,694,Salon Carreras,Metal Slug
-16,Indonesia,MONO,1,612,Salon VR,Metal Slug
 43,Philippines,STEREO,5,992,Salon 5,Metal Slug
 72,Ecuador,STEREO,3,338,Salon Carreras,Metal Slug
 74,Sri Lanka,STEREO,2,614,Salon Carreras,Metal Slug
@@ -205,7 +160,6 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 110,Indonesia,STEREO,4,478,Salon 1,Metal Slug
 128,China,STEREO,5,916,Salon 6,Metal Slug
 139,Czech Republic,STEREO,3,272,Salon VR,Metal Slug
-159,Ethiopia,STEREO,1,582,Salon 3,Metal Slug
 171,Paraguay,MONO,5,622,Salon 2,Metal Slug
 175,Poland,MONO,5,270,Salon VR,Metal Slug
 199,Panama,STEREO,5,486,Salon 2,Metal Slug
@@ -214,16 +168,12 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 228,Indonesia,STEREO,3,454,Salon Retro,Metal Slug
 231,China,MONO,3,970,Salon 3,Metal Slug
 261,Ireland,STEREO,4,950,Salon 1,Metal Slug
-337,Portugal,STEREO,1,816,Salon 5,Metal Slug
 354,China,STEREO,3,724,Salon 2,Metal Slug
 368,China,MONO,5,308,Salon 4,Metal Slug
 443,Sweden,STEREO,2,708,Salon Retro,Metal Slug
-2,Sweden,STEREO,1,560,Salon 2,Mortal Kombat
 4,United States,STEREO,3,630,Salon 6,Mortal Kombat
 6,Indonesia,STEREO,2,962,Salon Retro,Mortal Kombat
 53,Indonesia,STEREO,4,884,Salon 3,Mortal Kombat
-63,Bangladesh,STEREO,1,678,Salon 4,Mortal Kombat
-89,Bahrain,MONO,1,352,Salon 1,Mortal Kombat
 116,Poland,MONO,3,346,Salon 6,Mortal Kombat
 140,Armenia,STEREO,4,792,Salon 1,Mortal Kombat
 143,China,MONO,5,666,Salon 2021,Mortal Kombat
@@ -235,10 +185,7 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 227,Russia,STEREO,5,682,Salon 1,Mortal Kombat
 245,Ivory Coast,STEREO,3,526,Salon Retro,Mortal Kombat
 269,Venezuela,STEREO,2,698,Salon 6,Mortal Kombat
-287,Philippines,STEREO,1,286,Salon Retro,Mortal Kombat
 323,China,STEREO,5,950,Salon 2021,Mortal Kombat
-325,China,STEREO,1,354,Salon 2,Mortal Kombat
-336,Belarus,STEREO,1,658,Salon 6,Mortal Kombat
 381,Indonesia,STEREO,2,902,Salon 3,Mortal Kombat
 406,Philippines,MONO,2,812,Salon 3,Mortal Kombat
 454,Russia,MONO,5,780,Salon 4,Mortal Kombat
@@ -247,61 +194,44 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 490,Philippines,STEREO,5,384,Salon Retro,Mortal Kombat
 9,Russia,MONO,5,996,Salon 2021,Out Run
 15,Sweden,STEREO,3,868,Salon 3,Out Run
-17,Sweden,MONO,1,666,Salon 6,Out Run
 27,Cuba,MONO,3,392,Salon VR,Out Run
-56,Philippines,MONO,1,778,Salon 3,Out Run
 60,Uruguay,STEREO,2,760,Salon 6,Out Run
 71,Micronesia,STEREO,5,830,Salon VR,Out Run
 75,Argentina,MONO,3,356,Salon 1,Out Run
 76,China,STEREO,4,282,Salon 2021,Out Run
-88,Philippines,STEREO,1,474,Salon Carreras,Out Run
-96,China,MONO,1,776,Salon Carreras,Out Run
-106,Philippines,MONO,1,248,Salon 2,Out Run
 119,China,STEREO,5,948,Salon 2021,Out Run
 132,Argentina,STEREO,2,872,Salon 2021,Out Run
-134,Czech Republic,MONO,1,960,Salon Retro,Out Run
 137,France,MONO,4,578,Salon 6,Out Run
 138,Indonesia,MONO,4,302,Salon 3,Out Run
 152,Argentina,STEREO,3,306,Salon VR,Out Run
 157,Estonia,MONO,2,602,Salon 2,Out Run
-167,Brazil,MONO,1,674,Salon 2,Out Run
 169,Philippines,STEREO,5,376,Salon 4,Out Run
 191,Zimbabwe,STEREO,5,918,Salon 3,Out Run
 207,China,MONO,4,910,Salon 5,Out Run
 259,China,STEREO,2,322,Salon VR,Out Run
 283,Greece,MONO,2,258,Salon 1,Out Run
 288,Palestinian Territory,STEREO,4,824,Salon Retro,Out Run
-291,Brazil,STEREO,1,234,Salon 4,Out Run
 311,Finland,STEREO,5,270,Salon 5,Out Run
 333,China,MONO,4,622,Salon 2021,Out Run
 377,China,STEREO,2,422,Salon Retro,Out Run
 395,Indonesia,MONO,3,396,Salon 6,Out Run
 401,Germany,STEREO,2,974,Salon 3,Out Run
 441,Nauru,STEREO,2,898,Salon 3,Out Run
-453,Brazil,MONO,1,282,Salon 3,Out Run
-478,China,MONO,1,558,Salon 3,Out Run
-497,China,MONO,1,448,Salon Carreras,Out Run
 32,Afghanistan,STEREO,3,232,Salon 3,Pacman
 34,Russia,STEREO,5,602,Salon 6,Pacman
 62,China,STEREO,5,908,Salon 1,Pacman
 79,China,MONO,4,720,Salon 6,Pacman
 113,China,STEREO,3,218,Salon 2021,Pacman
 120,Mexico,STEREO,5,670,Salon VR,Pacman
-144,Chile,STEREO,1,214,Salon 5,Pacman
 154,Indonesia,MONO,2,664,Salon 2021,Pacman
 177,French Guiana,STEREO,4,368,Salon 1,Pacman
-193,Poland,STEREO,1,300,Salon 1,Pacman
 196,Iran,MONO,5,388,Salon 3,Pacman
 200,China,STEREO,2,760,Salon 1,Pacman
 202,Afghanistan,STEREO,2,934,Salon Carreras,Pacman
 204,Brazil,STEREO,2,226,Salon 6,Pacman
 232,Dominica,STEREO,2,772,Salon Retro,Pacman
-238,United States,STEREO,1,302,Salon 4,Pacman
 256,Mauritius,MONO,3,246,Salon 1,Pacman
-290,Mongolia,STEREO,1,498,Salon 5,Pacman
-298,Russia,STEREO,1,826,Salon VR,Pacman
 319,France,STEREO,3,590,Salon 2,Pacman
-334,China,STEREO,1,708,Salon 3,Pacman
 339,France,STEREO,2,524,Salon 2021,Pacman
 361,China,STEREO,5,702,Salon 4,Pacman
 414,Chile,MONO,2,338,Salon Carreras,Pacman
@@ -321,7 +251,6 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 107,Mexico,STEREO,4,944,Salon 5,Pong
 135,China,STEREO,3,534,Salon 2,Pong
 146,Slovenia,MONO,5,354,Salon 3,Pong
-158,France,STEREO,1,846,Salon 4,Pong
 161,Czech Republic,STEREO,2,442,Salon Carreras,Pong
 211,Hungary,MONO,2,710,Salon 2,Pong
 233,Azerbaijan,STEREO,5,418,Salon 3,Pong
@@ -335,17 +264,14 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 360,China,STEREO,4,476,Salon VR,Pong
 412,Ecuador,STEREO,3,476,Salon 4,Pong
 436,Bangladesh,MONO,3,790,Salon VR,Pong
-494,Poland,STEREO,1,634,Salon Retro,Pong
 496,Mexico,MONO,4,268,Salon 4,Pong
 8,Japan,MONO,2,792,Salon 1,Space Invaders
 11,China,MONO,4,556,Salon Carreras,Space Invaders
 23,Belarus,STEREO,2,830,Salon 3,Space Invaders
 52,Paraguay,MONO,2,214,Salon 5,Space Invaders
-66,Brazil,MONO,1,550,Salon 2,Space Invaders
 105,Philippines,STEREO,3,426,Salon Carreras,Space Invaders
 112,China,STEREO,5,888,Salon Retro,Space Invaders
 189,Ukraine,MONO,4,266,Salon 2021,Space Invaders
-201,China,MONO,1,542,Salon 2,Space Invaders
 235,China,MONO,4,672,Salon Retro,Space Invaders
 252,China,MONO,5,816,Salon 4,Space Invaders
 268,Brazil,STEREO,2,202,Salon 2021,Space Invaders
@@ -355,14 +281,11 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 424,Russia,MONO,5,844,Salon 1,Space Invaders
 433,China,MONO,5,232,Salon Retro,Space Invaders
 450,Libya,STEREO,2,882,Salon 3,Space Invaders
-459,Switzerland,STEREO,1,620,Salon 5,Space Invaders
 466,Czech Republic,MONO,5,264,Salon 1,Space Invaders
 468,China,STEREO,5,740,Salon 6,Space Invaders
-473,Indonesia,STEREO,1,972,Salon VR,Space Invaders
 475,Philippines,MONO,2,538,Salon 4,Space Invaders
 46,China,STEREO,4,912,Salon 5,Star Wars
 84,Honduras,MONO,5,778,Salon 3,Star Wars
-90,Morocco,MONO,1,618,Salon 6,Star Wars
 92,Sweden,STEREO,2,720,Salon 3,Star Wars
 98,Indonesia,STEREO,3,958,Salon 2,Star Wars
 109,Bulgaria,STEREO,3,568,Salon 6,Star Wars
@@ -371,7 +294,6 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 149,Philippines,STEREO,2,300,Salon 1,Star Wars
 150,Philippines,STEREO,3,534,Salon Carreras,Star Wars
 209,Luxembourg,MONO,2,424,Salon 6,Star Wars
-263,Philippines,MONO,1,942,Salon Carreras,Star Wars
 265,China,MONO,3,338,Salon 1,Star Wars
 272,China,STEREO,4,482,Salon Carreras,Star Wars
 277,Peru,MONO,5,980,Salon 5,Star Wars
@@ -380,11 +302,9 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 374,Saudi Arabia,STEREO,5,452,Salon 4,Star Wars
 388,Philippines,STEREO,2,224,Salon 2,Star Wars
 437,China,STEREO,3,626,Salon 1,Star Wars
-440,Burundi,STEREO,1,530,Salon 2,Star Wars
 471,Philippines,STEREO,4,956,Salon VR,Star Wars
 480,Indonesia,MONO,3,452,Salon 6,Star Wars
 489,Azerbaijan,STEREO,2,946,Salon 2021,Star Wars
-33,China,STEREO,1,812,Salon 3,Street Fighter II
 35,Indonesia,STEREO,4,414,Salon Retro,Street Fighter II
 91,Indonesia,STEREO,4,866,Salon Retro,Street Fighter II
 100,China,STEREO,5,426,Salon 3,Street Fighter II
@@ -392,21 +312,14 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 145,Russia,MONO,5,708,Salon 3,Street Fighter II
 172,China,MONO,4,832,Salon 2,Street Fighter II
 176,Canada,STEREO,3,802,Salon Carreras,Street Fighter II
-208,Georgia,MONO,1,940,Salon 1,Street Fighter II
-229,New Caledonia,STEREO,1,756,Salon Carreras,Street Fighter II
 260,Slovenia,STEREO,3,988,Salon Carreras,Street Fighter II
 264,Argentina,STEREO,2,578,Salon 2021,Street Fighter II
-271,Mauritania,STEREO,1,528,Salon 2021,Street Fighter II
-278,China,MONO,1,500,Salon 6,Street Fighter II
 295,Dominican Republic,MONO,5,686,Salon 5,Street Fighter II
-304,Tunisia,MONO,1,468,Salon 5,Street Fighter II
 317,Indonesia,STEREO,3,472,Salon 2021,Street Fighter II
 332,Russia,MONO,2,510,Salon 3,Street Fighter II
 338,Brazil,MONO,3,524,Salon VR,Street Fighter II
 352,Ukraine,MONO,2,518,Salon Retro,Street Fighter II
-364,Brazil,STEREO,1,812,Salon Carreras,Street Fighter II
 375,Brazil,MONO,2,204,Salon 3,Street Fighter II
-378,China,STEREO,1,980,Salon 5,Street Fighter II
 386,Iran,STEREO,4,240,Salon 6,Street Fighter II
 387,China,STEREO,2,802,Salon 3,Street Fighter II
 428,Indonesia,MONO,5,396,Salon 2,Street Fighter II
@@ -416,28 +329,20 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 44,Russia,MONO,5,302,Salon Carreras,Tetris
 57,Madagascar,MONO,3,824,Salon 5,Tetris
 59,Philippines,STEREO,4,606,Salon Carreras,Tetris
-67,Colombia,STEREO,1,272,Salon 6,Tetris
 81,Russia,STEREO,3,552,Salon Retro,Tetris
 97,Portugal,MONO,2,314,Salon 2,Tetris
 151,Thailand,MONO,4,218,Salon 5,Tetris
-162,Indonesia,STEREO,1,380,Salon VR,Tetris
 164,China,STEREO,4,744,Salon 3,Tetris
 173,Ukraine,STEREO,3,936,Salon 4,Tetris
 180,Haiti,MONO,3,732,Salon Retro,Tetris
 186,Russia,MONO,3,784,Salon VR,Tetris
 220,China,MONO,3,552,Salon 5,Tetris
 230,Serbia,MONO,3,598,Salon 2,Tetris
-241,China,MONO,1,714,Salon 3,Tetris
 308,Canada,STEREO,2,370,Salon 2,Tetris
-313,Nigeria,MONO,1,896,Salon 3,Tetris
 321,Indonesia,STEREO,4,808,Salon 3,Tetris
-351,Poland,MONO,1,860,Salon 1,Tetris
 370,Kosovo,MONO,4,662,Salon 4,Tetris
-398,China,MONO,1,660,Salon 2,Tetris
 408,Russia,STEREO,4,402,Salon Retro,Tetris
-413,China,MONO,1,772,Salon 6,Tetris
 417,China,MONO,3,234,Salon 5,Tetris
-421,Philippines,MONO,1,660,Salon 4,Tetris
 430,Brazil,MONO,4,884,Salon 2,Tetris
 455,China,MONO,2,768,Salon 4,Tetris
 461,Indonesia,MONO,2,296,Salon 6,Tetris
@@ -448,9 +353,7 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 483,Afghanistan,MONO,4,662,Salon 6,Tetris
 495,Brazil,STEREO,5,300,Salon 3,Tetris
 13,Philippines,MONO,5,248,Salon Retro,Tron
-21,China,MONO,1,450,Salon 2,Tron
 31,Kazakhstan,MONO,3,618,Salon 3,Tron
-42,Greece,MONO,1,590,Salon 5,Tron
 61,Ireland,MONO,3,394,Salon 1,Tron
 69,Russia,MONO,5,226,Salon 1,Tron
 104,Portugal,STEREO,3,602,Salon 3,Tron
@@ -460,7 +363,6 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 185,Brazil,STEREO,3,552,Salon 2,Tron
 210,Mongolia,MONO,5,720,Salon VR,Tron
 213,United States,MONO,2,698,Salon 1,Tron
-224,Colombia,MONO,1,226,Salon 1,Tron
 243,Indonesia,STEREO,2,702,Salon Retro,Tron
 273,China,MONO,5,342,Salon 1,Tron
 294,Indonesia,STEREO,4,926,Salon Carreras,Tron
@@ -476,14 +378,11 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 19,Ethiopia,MONO,2,210,Salon 6,Virtua Cop
 24,Sri Lanka,STEREO,5,666,Salon 1,Virtua Cop
 45,Indonesia,STEREO,3,630,Salon 6,Virtua Cop
-47,China,STEREO,1,968,Salon 2,Virtua Cop
 54,Greece,MONO,2,908,Salon 2021,Virtua Cop
 64,Japan,MONO,3,520,Salon 2,Virtua Cop
-68,Indonesia,STEREO,1,778,Salon Carreras,Virtua Cop
 82,New Zealand,STEREO,4,412,Salon 6,Virtua Cop
 101,Estonia,MONO,4,430,Salon 3,Virtua Cop
 111,Russia,MONO,3,858,Salon Carreras,Virtua Cop
-118,China,MONO,1,264,Salon 4,Virtua Cop
 122,Portugal,STEREO,3,212,Salon 1,Virtua Cop
 129,Peru,STEREO,2,844,Salon 3,Virtua Cop
 190,Philippines,STEREO,3,750,Salon 4,Virtua Cop
@@ -493,7 +392,6 @@ ID,Nacionalidad,Tipo de Sonido,Jugadores,Fichas,Salon,Juego
 282,Malaysia,MONO,4,842,Salon 1,Virtua Cop
 307,Sweden,MONO,2,758,Salon 3,Virtua Cop
 314,Indonesia,STEREO,2,290,Salon 4,Virtua Cop
-345,United States,STEREO,1,838,Salon Carreras,Virtua Cop
 357,Comoros,MONO,2,696,Salon Carreras,Virtua Cop
 358,Costa Rica,STEREO,4,966,Salon Carreras,Virtua Cop
 373,Russia,STEREO,2,594,Salon 2,Virtua Cop

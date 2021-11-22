@@ -209,6 +209,25 @@ int esNombreSalonJuego (char cadena[])
 
 }
 
+int esTipoSonido (char cadena[])
+{
+	int retorno;
+
+	retorno=-1;
+
+	if(cadena!=NULL&&strlen(cadena)>0)
+	{
+		if((strcmp(cadena,"STEREO")==0)||(strcmp(cadena,"MONO")==0))
+		{
+			retorno=0;
+		}
+	}
+
+
+	return retorno;
+
+}
+
 
 
 

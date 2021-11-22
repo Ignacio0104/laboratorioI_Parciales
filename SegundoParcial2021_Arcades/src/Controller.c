@@ -264,7 +264,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListArcades)
 					strncpy(tipoSonidoTxtAux,"MONO",NOMBRE_LEN);
 				} else
 				{
-					strncpy(tipoSonidoTxtAux,"ESTEREO",NOMBRE_LEN);
+					strncpy(tipoSonidoTxtAux,"STEREO",NOMBRE_LEN);
 				}
 				arcade_getJugadores(pArcadeAux,&jugadoresAux);
 				arcade_getFichas(pArcadeAux,&fichasAux);
