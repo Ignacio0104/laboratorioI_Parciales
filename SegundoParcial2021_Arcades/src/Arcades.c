@@ -268,23 +268,20 @@ int arcade_printArcade(Arcade* this)
 	if(this!=NULL)
 	{
 
-		arcade_getId(this,&idAux);
-		arcade_getNacionalidad(this,nacionalidadAux);
-		arcade_getSonido(this,&tipoSonidoAux);
-		if(tipoSonidoAux==1)
+		if(arcade_getId(this,&idAux)==0 &&
+		arcade_getNacionalidad(this,nacionalidadAux)==0&&
+		arcade_getSonido(this,&tipoSonidoAux)==0&&
+		arcade_cambiarTexto (tipoSonidoAux, tipoSonidoTxtAux)==0&&
+		arcade_getJugadores(this,&jugadoresAux)==0&&
+		arcade_getFichas(this,&fichasAux)==0&&
+		arcade_getSalon(this,salonAux)==0&&
+		arcade_getJuego(this,juegoAux)==0)
 		{
-			strncpy(tipoSonidoTxtAux,"MONO",NOMBRE_LEN);
-		} else
-		{
-			strncpy(tipoSonidoTxtAux,"STEREO",NOMBRE_LEN);
+			printf("Arcade ID: %d - Nacionalidad: %s - Sonido: %s - Jugadores: %d - Fichas: %d - Salon: %s - Juego: %s\n"
+					,idAux,nacionalidadAux,tipoSonidoTxtAux,jugadoresAux,fichasAux,salonAux,juegoAux);
+			retorno=0;
 		}
-		arcade_getJugadores(this,&jugadoresAux);
-		arcade_getFichas(this,&fichasAux);
-		arcade_getSalon(this,salonAux);
-		arcade_getJuego(this,juegoAux);
-		printf("Arcade ID: %d - Nacionalidad: %s - Sonido: %s - Jugadores: %d - Fichas: %d - Salon: %s - Juego: %s\n"
-				,idAux,nacionalidadAux,tipoSonidoTxtAux,jugadoresAux,fichasAux,salonAux,juegoAux);
-		retorno=0;
+
 	}
 
 	return retorno;
@@ -384,6 +381,7 @@ int arcade_mostrarJuegos(LinkedList* pArrayArcade)
 				pArcadeComparacion=ll_get(pArrayArcade,i+1);
 				if(pArcadeAux!=NULL)
 				{
+					retorno=0;
 					criterio=arcade_compareGame(pArcadeAux,pArcadeComparacion);
 
 					if(criterio==0)
@@ -494,7 +492,7 @@ int arcade_compareGame(void* arcadeUno,void* arcadeDos)
 
 int arcade_cambiarTexto (int sonido, char pTextoConvertido[])
 {
-	int retorno;
+	int retorno=-1;
 
 	switch (sonido)
 	{

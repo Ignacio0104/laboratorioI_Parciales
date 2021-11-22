@@ -14,6 +14,7 @@
 #include "Controller.h"
 #include "biblioteca_input.h"
 
+
 int main()
 {
 	setbuf(stdout,NULL);
