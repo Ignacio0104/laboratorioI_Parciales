@@ -536,18 +536,6 @@ int arcade_setIdTxt(Arcade* this,char* id)
 }
 
 
-int arcade_getIdTxt(Arcade* this,int* pId)
-{
-	int retorno=-1;
-	if(this!=NULL&&pId!=NULL)
-	{
-		*pId=this->idArcade;
-		retorno=0;
-	}
-
-	return retorno;
-}
-
 
 int arcade_setId(Arcade* this,int id)
 {
@@ -653,7 +641,10 @@ int arcade_getSonidoTxt(Arcade* this,char* sonido)
 		retorno=-2;
 		sonidoAux=this->soundType;
 
-		arcade_cambiarTexto(sonidoAux, sonido);
+		if(arcade_cambiarTexto(sonidoAux, sonido)==0)
+		{
+			retorno=0;
+		}
 	}
 
 	return retorno;

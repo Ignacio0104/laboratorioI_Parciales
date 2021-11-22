@@ -159,30 +159,155 @@ int arcade_cambiarTexto (int sonido, char pTextoConvertido[]);
 //// SETTERS Y GETTERS ////
 
 /// \fn int arcade_setIdTxt(Arcade*, char*)
-/// \brief
+/// \brief Setea el valor pasado por parametro en el campo indicado de la estructura
 ///
-/// \param this
-/// \param id
-/// \return
+/// \param this Recibe el puntero a la estructura
+/// \param id Recibe el ID a setear en formato cadena de char
+/// \return Devuelve -1 si los punteros son inválidos, -2 si la cadena es no numérica o 0 si salió bien
 int arcade_setIdTxt(Arcade* this,char* id);
-int arcade_getIdTxt(Arcade* this,int* pId);
+
+/// \fn int arcade_setId(Arcade*, int)
+/// \brief Setea el valor pasado por parametro en el campo indicado de la estructura
+///
+/// \param this  Recibe el puntero a la estructura
+/// \param id Recibe el ID a setear en formato int
+/// \return Devuelve 0 si salió bien o -1 si hubo un error
 int arcade_setId(Arcade* this,int id);
+
+/// \fn int arcade_getId(Arcade*, int*)
+/// \brief Consigue el ID desde la estructura
+///
+/// \param this Recibe el puntero a la estructura
+/// \param id Recibe puntero a variable donde se guardará el ID
+/// \return Devuelve 0 si salió bien o -1 si hubo un error
 int arcade_getId(Arcade* this,int* id);
+
+/// \fn int arcade_setNacionalidad(Arcade*, char*)
+/// \brief Setea el valor pasado por parametro en el campo indicado de la estructura
+///
+/// \param this Recibe el puntero a la estructura
+/// \param nacionalidad Recibe la nacionalidad a setear en formato cadena de char
+/// \return Devuelve -1 si los punteros son inválidos, -2 si la cadena es no texto o 0 si salió bien
 int arcade_setNacionalidad(Arcade* this,char* nacionalidad);
+
+/// \fn int arcade_getNacionalidad(Arcade*, char*)
+/// \brief Consigue la nacionalidad desde la estructura
+///
+/// \param this Recibe el puntero a la estructura
+/// \param nacionalidad Recibe puntero a variable donde se guardará la nacionalidad
+/// \return Devuelve -1 si los punteros son inválidos, -2 si la cadena es no texto o 0 si salió bien
 int arcade_getNacionalidad(Arcade* this,char* nacionalidad);
+
+/// \fn int arcade_setSonidoTxt(Arcade*, char*)
+/// \brief Setea el valor pasado por parametro en el campo indicado de la estructura
+///
+/// \param this Recibe el puntero a la estructura
+/// \param sonido Recibe el tipo de sonido a setear en formato cadena de char
+/// \return Devuelve -1 si los punteros son inválidos, -2 si la cadena no es tipo de Sonido o 0 si salió bien
 int arcade_setSonidoTxt(Arcade* this,char* sonido);
+
+/// \fn int arcade_setSonido(Arcade*, int)
+/// \brief Setea el valor pasado por parametro en el campo indicado de la estructura
+///
+/// \param this Recibe el puntero a la estructura
+/// \param sonido Recibe el tipo de sonido a setear en formato int
+/// \return Devuelve 0 si salió bien o -1 si hubo un error
 int arcade_setSonido(Arcade* this,int sonido);
+
+/// \fn int arcade_getSonidoTxt(Arcade*, char*)
+/// \brief Consigue el tipo de sonido desde la estructura
+///
+/// \param this Recibe el puntero a la estructura
+/// \param sonido Recibe puntero a variable donde se guardará el tipo de sonido una vez convertido a texto
+/// \return Devuelve -1 si los punteros son inválidos, -2 si la cadena no es tipo de Sonido o 0 si salió bien
 int arcade_getSonidoTxt(Arcade* this,char* sonido);
+
+/// \fn int arcade_getSonido(Arcade*, int*)
+/// \brief Consigue el tipo de sonido desde la estructura
+///
+/// \param this Recibe el puntero a la estructura
+/// \param sonido Recibe puntero a variable donde se guardará el tipo de sonido en formato int
+/// \return Devuelve 0 si salió bien o -1 si hubo un error
 int arcade_getSonido(Arcade* this,int* sonido);
+
+/// \fn int arcade_setJugadoresTxt(Arcade*, char*)
+/// \brief Setea el valor pasado por parametro en el campo indicado de la estructura
+///
+/// \param this Recibe el puntero a la estructura
+/// \param jugadores Recibe la cantidad de jugadores a setear en formato cadena de char
+/// \return Devuelve -1 si los punteros son inválidos, -2 si la cadena no es numérica o 0 si salió bien
 int arcade_setJugadoresTxt(Arcade* this,char* jugadores);
+
+/// \fn int arcade_setJugadores(Arcade*, int)
+/// \brief Setea el valor pasado por parametro en el campo indicado de la estructura
+///
+/// \param this Recibe el puntero a la estructura
+/// \param jugadores Recibe la cantidad de jugadores a setear en formato int
+/// \return Devuelve 0 si salió bien o -1 si hubo un error
 int arcade_setJugadores(Arcade* this,int jugadores);
+
+/// \fn int arcade_getJugadores(Arcade*, int*)
+/// \brief Consigue la cantidad de jugadores desde la estructura
+///
+/// \param this Recibe el puntero a la estructura
+/// \param jugadores Recibe puntero a variable donde se guardará la cantidad de jugadores en formato int
+/// \return Devuelve 0 si salió bien o -1 si hubo un error
 int arcade_getJugadores(Arcade* this,int* jugadores);
+
+/// \fn int arcade_setFichasTxt(Arcade*, char*)
+/// \brief Setea el valor pasado por parametro en el campo indicado de la estructura
+///
+/// \param this Recibe el puntero a la estructura
+/// \param fichas Recibe la cantidad de fichas a setear en formato cadena de char
+/// \return Devuelve -1 si los punteros son inválidos, -2 si la cadena no es numérica o 0 si salió bien
 int arcade_setFichasTxt(Arcade* this,char* fichas);
+
+/// \fn int arcade_setFichas(Arcade*, int)
+/// \brief Setea el valor pasado por parametro en el campo indicado de la estructura
+///
+/// \param this Recibe el puntero a la estructura
+/// \param fichas Recibe la cantidad de fichas a setear en formato int
+/// \return Devuelve 0 si salió bien o -1 si hubo un error
 int arcade_setFichas(Arcade* this,int fichas);
+
+/// \fn int arcade_getFichas(Arcade*, int*)
+/// \brief Consigue la cantidad fichas desde la estructura
+///
+/// \param this Recibe el puntero a la estructura
+/// \param fichas Recibe puntero a variable donde se guardará la cantidad de fichas en formato int
+/// \return Devuelve 0 si salió bien o -1 si hubo un error
 int arcade_getFichas(Arcade* this,int* fichas);
+
+/// \fn int arcade_setSalon(Arcade*, char*)
+/// \brief Setea el valor pasado por parametro en el campo indicado de la estructura
+///
+/// \param this Recibe el puntero a la estructura
+/// \param salon Recibe el nombre de salon a setear en formato cadena de char
+/// \return Devuelve -1 si los punteros son inválidos, -2 si la cadena no es compatible o 0 si salió bien
 int arcade_setSalon(Arcade* this,char* salon);
+
+/// \fn int arcade_getSalon(Arcade*, char*)
+/// \brief Consigue el nombre de salon desde la estructura
+///
+/// \param this Recibe el puntero a la estructura
+/// \param salon Recibe puntero a variable donde se guardará el salon
+/// \return Devuelve -1 si los punteros son inválidos, -2 si la cadena no es compatible o 0 si salió bien
 int arcade_getSalon(Arcade* this,char* salon);
+
+/// \fn int arcade_setJuego(Arcade*, char*)
+/// \brief Setea el valor pasado por parametro en el campo indicado de la estructura
+///
+/// \param this Recibe el puntero a la estructura
+/// \param juego Recibe el nombre del juego a setear en formato cadena de char
+/// \return Devuelve -1 si los punteros son inválidos, -2 si la cadena no es compatible o 0 si salió bien
 int arcade_setJuego(Arcade* this,char* juego);
+
+/// \fn int arcade_getJuego(Arcade*, char*)
+/// \brief Consigue el nombre de juego desde la estructura
+///
+/// \param this Recibe el puntero a la estructura
+/// \param juego Recibe puntero a variable donde se guardará el juego
+/// \return Devuelve -1 si los punteros son inválidos, -2 si la cadena no es compatible o 0 si salió bien
 int arcade_getJuego(Arcade* this,char* juego);
 
 
