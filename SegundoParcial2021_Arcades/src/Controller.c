@@ -87,7 +87,6 @@ int controller_addArcade(LinkedList* pArrayListArcades)
 							{
 								if(arcade_setJuego(pArcadeAux,juegoAux)==0)
 								{
-
 									if(arcade_setSalon(pArcadeAux,salonAux)==0)
 									{
 										ll_add(pArrayListArcades,pArcadeAux);
@@ -333,7 +332,6 @@ int controller_editArcade(LinkedList* pArrayListArcades)
 				printf("No se encontró el arcade solicitado\n\n");
 			}
 		}
-
 
 	} else
 	{

@@ -103,7 +103,7 @@ int arcade_askForInformation(char *pNacionalidad, int* pSonido, int* pJugadores,
 int arcade_createFirstId (LinkedList* pArrayArcade)
 {
 	int idAnterior;
-	int idNueva;
+	int idNueva=-1;
 	idAnterior=arcade_findLastId(pArrayArcade);
 
 	if(idAnterior>=0)
@@ -303,10 +303,9 @@ int arcade_findById(LinkedList* pArrayArcade,int id)
 		longitud=ll_len(pArrayArcade);
 		for(int i=0;i<longitud;i++)
 		{
-			if(ll_get(pArrayArcade, i)!=NULL)
+			pElemento=ll_get(pArrayArcade, i);
+			if(pElemento!=NULL)
 			{
-				pElemento=ll_get(pArrayArcade, i);
-
 				if(arcade_getId(pElemento,&idLista)==0)
 				{
 					if(idLista==id)
@@ -339,10 +338,9 @@ int arcade_findLastId(LinkedList* pArrayArcade)
 		longitud=ll_len(pArrayArcade);
 		for(int i=0;i<longitud;i++)
 		{
-			if(ll_get(pArrayArcade, i)!=NULL)
+			pElemento=ll_get(pArrayArcade, i);
+			if(pElemento!=NULL)
 			{
-				pElemento=ll_get(pArrayArcade, i);
-
 				arcade_getId(pElemento,&idLista);
 
 				if(idLista>idMaxima)
@@ -612,8 +610,12 @@ int arcade_setSonidoTxt(Arcade* this,char* sonido)
 				retorno=0;
 			} else
 			{
-				this->soundType=TIPO_ESTEREO;
-				retorno=0;
+				if(strcmp(sonido,"STEREO")==0)
+				{
+					this->soundType=TIPO_ESTEREO;
+					retorno=0;
+				}
+
 			}
 
 		}
