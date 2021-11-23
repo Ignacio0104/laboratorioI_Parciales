@@ -179,7 +179,7 @@ int arcade_modify(Arcade* this,LinkedList* pArrayArcade)
 								retorno=0;
 							} else
 							{
-								printf("\nNo se pudo modificar\n");
+								printf("\nNo se pudo modificar \n");
 
 							}
 						}else
@@ -198,7 +198,7 @@ int arcade_modify(Arcade* this,LinkedList* pArrayArcade)
 						break;
 					case 2:
 
-						if(pedirIntIntentosRango(&jugadoresAux,0, INT_MAX, 1, "Ingrese la cantidad de jugadores: ", "Error, dato ingresado inválido")==0)
+						if(pedirIntIntentosRango(&jugadoresAux,1, 6, 1, "Ingrese la cantidad de jugadores: ", "Error, dato ingresado inválido")==0)
 						{
 							if(arcade_setJugadores(this,jugadoresAux)==0)
 							{
@@ -434,10 +434,15 @@ int arcade_doubleToken(void* pArcade)
 
     if(pArcade!=NULL)
 	{
-    	arcade_getFichas(pArcade,&fichasAux);
-    	fichasAux=fichasAux*2;
-    	arcade_setFichas(pArcade,fichasAux);
-    	retorno=0;
+    	if(arcade_getFichas(pArcade,&fichasAux)==0)
+    	{
+        	fichasAux=fichasAux*2;
+
+        	if(arcade_setFichas(pArcade,fichasAux)==0)
+        	{
+            	retorno=0;
+        	}
+    	}
 
 	}
 
@@ -622,7 +627,7 @@ int arcade_setSonido(Arcade* this,int sonido)
 {
 	int retorno=-1;
 
-	if(this!=NULL && (sonido==1||sonido==2))
+	if(this!=NULL && (sonido==TIPO_MONO||sonido==TIPO_ESTEREO))
 	{
 		this->soundType=sonido;
 		retorno=0;

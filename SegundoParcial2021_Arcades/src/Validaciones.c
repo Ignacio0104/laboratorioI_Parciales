@@ -16,7 +16,7 @@ static int myGets(char pResultado[], int len);
 int pedirNombre(char pResultado[],int lenght, int reintentos, char* variableTexto, char* textoError)
 {
 	int retorno=-1;
-	char bufferCadenaAux[128];
+	char bufferCadenaAux[NOMBRE_LEN];
 	int i;
 
 	if(pResultado != NULL && reintentos >0 && lenght>0 && variableTexto != NULL && textoError != NULL)
@@ -31,7 +31,7 @@ int pedirNombre(char pResultado[],int lenght, int reintentos, char* variableText
 				if(esNombre(bufferCadenaAux)==0)
 				{
 
-					retorno = 0; // OK
+					retorno = 0;
 					strncpy (pResultado,bufferCadenaAux,lenght);
 					break;
 					}else

@@ -143,47 +143,25 @@ int controller_addJuego(LinkedList* pArrayListArcades,LinkedList* pArrayJuegos)
 				pArcadeUno=ll_get(pArrayListArcades,i);
 				pArcadeDos=ll_get(pArrayListArcades,i+1);
 
+				if(pArcadeUno!=NULL)
+				{
+					criterio=arcade_compareGame(pArcadeUno,pArcadeDos);
 
-				criterio=arcade_compareGame(pArcadeUno,pArcadeDos);
-
-					if(criterio==1||criterio==-1)
+					if(criterio==0)
+					{
+						continue;
+					} else
 					{
 						arcade_getJuego(pArcadeUno,nombreJuegoAux);
 						pJuegoAux=juego_newParametros(nombreJuegoAux);
 						if(pJuegoAux!=NULL)
 						{
-							if(ll_contains(pArrayJuegos, pJuegoAux)==0)
-							{
-								fprintf(f,"%s\n",nombreJuegoAux);
-								ll_add(pArrayJuegos,pJuegoAux);
-							} else
-							{
-								free(pJuegoAux);
-								continue;
-							}
-
-						}
-
-					} else
-					{
-						if(pArcadeDos==NULL)
-						{
-							pArcadeDos=ll_get(pArrayListArcades,i-1);
-
-							if(arcade_compareGame(pArcadeUno,pArcadeDos)==0)
-							{
-								arcade_getJuego(pArcadeUno,nombreJuegoAux);
-								pJuegoAux=juego_newParametros(nombreJuegoAux);
-								if(nombreJuegoAux!=NULL)
-								{
-									fprintf(f,"%s\n",nombreJuegoAux);
-									ll_add(pArrayJuegos,pJuegoAux);
-									break;
-								}
-							}
+							fprintf(f,"%s\n",nombreJuegoAux);
+							ll_add(pArrayJuegos,pJuegoAux);
 						}
 					}
 
+				}
 
 			}
 
@@ -203,7 +181,6 @@ int controller_ListJuego(LinkedList* pArrayJuegos)
 
 	if (pArrayJuegos!=NULL)
 	{
-
 		length=ll_len(pArrayJuegos);
 		if(length>0)
 		{
@@ -221,7 +198,7 @@ int controller_ListJuego(LinkedList* pArrayJuegos)
 			}
 		} else
 		{
-			printf("\nNo hay ningún empleado cargado para mostrar\n");
+			printf("\nNo hay ningún juego cargado para mostrar\n");
 		}
 
 	}
@@ -259,31 +236,24 @@ int controller_saveAsText(char* path , LinkedList* pArrayListArcades)
 			pArcadeAux = ll_get(pArrayListArcades,i);
 			if(pArcadeAux!=NULL)
 			{
-				arcade_getId(pArcadeAux,&idAux);
-				arcade_getNacionalidad(pArcadeAux,nacionalidadAux);
-				arcade_getSonido(pArcadeAux,&sonidoAux);
-				if(sonidoAux==1)
+				if(arcade_getId(pArcadeAux,&idAux)==0 &&
+				arcade_getNacionalidad(pArcadeAux,nacionalidadAux)==0 &&
+				arcade_getSonido(pArcadeAux,&sonidoAux)==0 &&
+				arcade_cambiarTexto (sonidoAux,tipoSonidoTxtAux)==0 &&
+				arcade_getJugadores(pArcadeAux,&jugadoresAux)==0 &&
+				arcade_getFichas(pArcadeAux,&fichasAux)==0 &&
+				arcade_getSalon(pArcadeAux,salonAux)==0 &&
+				arcade_getJuego(pArcadeAux,juegoAux)==0)
 				{
-					strncpy(tipoSonidoTxtAux,"MONO",NOMBRE_LEN);
-				} else
-				{
-					strncpy(tipoSonidoTxtAux,"STEREO",NOMBRE_LEN);
+					fprintf(f,"%d,%s,%s,%d,%d,%s,%s\n",idAux,nacionalidadAux,tipoSonidoTxtAux,jugadoresAux,fichasAux,salonAux,juegoAux);
+					retorno=0;
 				}
-				arcade_getJugadores(pArcadeAux,&jugadoresAux);
-				arcade_getFichas(pArcadeAux,&fichasAux);
-				arcade_getSalon(pArcadeAux,salonAux);
-				arcade_getJuego(pArcadeAux,juegoAux);
 
-
-				fprintf(f,"%d,%s,%s,%d,%d,%s,%s\n",idAux,nacionalidadAux,tipoSonidoTxtAux,jugadoresAux,fichasAux,salonAux,juegoAux);
-				retorno=0;
 			}
 
 		}
 		fclose(f);
 	}
-
-
 
     return retorno;
 }
@@ -402,27 +372,30 @@ int controller_removeArcade(LinkedList* pArrayListArcades)
 
 					if(pArcadeAux!=NULL)
 					{
-						arcade_getJuego(pArcadeAux,juegoAux);
-						arcade_getSalon(pArcadeAux,salonAux);
-						arcade_getNacionalidad(pArcadeAux,nacionalidadAux);
+						if(arcade_getJuego(pArcadeAux,juegoAux)==0&&
+						arcade_getSalon(pArcadeAux,salonAux)==0&&
+						arcade_getNacionalidad(pArcadeAux,nacionalidadAux)==0)
 
-						printf("Se va a eliminar al arcade:\n"
-								"ID: %d, Juego: %s, Salon: %s, Nacionalidad: %s",idPedida,juegoAux,salonAux,nacionalidadAux);
+						{
+							printf("Se va a eliminar al arcade:\n"
+									"ID: %d, Juego: %s, Salon: %s, Nacionalidad: %s",idPedida,juegoAux,salonAux,nacionalidadAux);
 
-						pedirCharSiNo(&userChoice, 's', 'n', 2, "\n\n ---------Presione [s] para confirmar o [n] para volver al menu principal---------\n",
-													"Error, dato ingresado inválido\n");
-						if(userChoice=='s')
-						{
-							ll_remove(pArrayListArcades,posicionArcade);
-							arcade_delete(pArcadeAux);
-							printf("\nArcade borrado del sistema\n");
-							retorno=0;
+							pedirCharSiNo(&userChoice, 's', 'n', 2, "\n\n ---------Presione [s] para confirmar o [n] para volver al menu principal---------\n",
+														"Error, dato ingresado inválido\n");
+							if(userChoice=='s')
+							{
+								ll_remove(pArrayListArcades,posicionArcade);
+								arcade_delete(pArcadeAux);
+								printf("\nArcade borrado del sistema\n");
+								retorno=0;
+							}
+							else
+							{
+								printf("\nNo se borrará el Arcade\n");
+								retorno=0;
+							}
 						}
-						else
-						{
-							printf("\nNo se borrará el Arcade\n");
-							retorno=0;
-						}
+
 					}
 
 				}
@@ -478,7 +451,7 @@ int controller_dobleFichas(LinkedList* pArrayListArcades)
 		{
 			if(ll_map(pArrayListArcades,arcade_doubleToken)==0)
 			{
-				printf(">>> Fichas de todos los arcades duplicadas <<<");
+				printf("\n>>> Fichas de todos los arcades duplicadas <<<\n");
 				retorno=0;
 			}
 		}else

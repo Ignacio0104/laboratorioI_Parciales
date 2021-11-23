@@ -5,7 +5,7 @@
 #include "Validaciones.h"
 
 #define NOMBRE_LEN 128
-#define MAX_LEN 256
+#define GAME_LEN 63
 
 /** \brief Parsea los datos los datos de los empleados desde el archivo data.csv (modo texto).
  *
@@ -18,13 +18,13 @@ int parser_ArcadeFromText(FILE* pFile , LinkedList* pArrayArcades)
 {
 	int retorno=-1;
 	Arcade* pArcadeAux;
-	char idAux[MAX_LEN];
+	char idAux[NOMBRE_LEN];
 	char nacionalidadAux[NOMBRE_LEN];
-	char tipoSonidoAux[MAX_LEN];
-	char jugadoresAux[MAX_LEN];
-	char fichasAux[MAX_LEN];
-	char salonAux[MAX_LEN];
-	char juegoAux[MAX_LEN];
+	char tipoSonidoAux[NOMBRE_LEN];
+	char jugadoresAux[NOMBRE_LEN];
+	char fichasAux[NOMBRE_LEN];
+	char salonAux[NOMBRE_LEN];
+	char juegoAux[GAME_LEN];
 	char banderaError='n';
 
 	if(pFile!=NULL&&pArrayArcades!=NULL)
@@ -35,8 +35,8 @@ int parser_ArcadeFromText(FILE* pFile , LinkedList* pArrayArcades)
 			if(fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n"
 					,idAux,nacionalidadAux,tipoSonidoAux,jugadoresAux,fichasAux,salonAux,juegoAux)==7)
 			{
-				if(esNumerica(idAux)==0&&esTexto(nacionalidadAux)==0&&esTipoSonido(tipoSonidoAux)==0&&esNumerica(jugadoresAux)==0&&esNumerica(fichasAux)==0
-						&&esNombreSalonJuego(salonAux)==0&&esNombreSalonJuego(juegoAux)==0)
+				if(esNumerica(idAux)==0&&esTexto(nacionalidadAux)==0&&esTipoSonido(tipoSonidoAux)==0&&esNumerica(jugadoresAux)==0
+						&&esNumerica(fichasAux)==0&&esNombreSalonJuego(salonAux)==0&&esNombreSalonJuego(juegoAux)==0)
 				{
 					pArcadeAux = arcade_newParametros(idAux,nacionalidadAux,tipoSonidoAux,jugadoresAux,fichasAux,salonAux,juegoAux);
 					if(pArcadeAux!=NULL)
